@@ -176,7 +176,9 @@
   <p class="subtitle">A knowledge-graph-guided strategy map</p>
 
   <div class="callout">
-    <strong>The conjecture.</strong> Warnaar's Conjecture 2.7 (from the 2021 paper on $A_2$ Andrews-Gordon identities)
+    <strong>The conjecture.</strong> Warnaar's Conjecture 2.7
+    (<a class="arxiv" href="https://arxiv.org/abs/2101.01966" target="_blank">arXiv:2101.01966</a>,
+    <em>$A_2$ Andrews-Gordon identities</em>)
     asserts the <em>positivity</em> of certain $q$-series coefficients $a^G_{\lambda;r}(q)$
     arising from the $A_2$ generalization of the Andrews-Gordon identities.
     Specifically, the polynomial $a^G_{\lambda;r}(q)$ should have non-negative integer coefficients.
@@ -187,10 +189,15 @@
 
   <h3><span class="tag t1">①</span> <span class="wlink" data-page="bailey">The $A_2$ Bailey Lemma</span> (algebraic, most direct)</h3>
   <p>
-    The most direct path through the graph. Warnaar's Theorem 1.1 proves the
-    <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span>, which implies
+    The most direct path through the graph. Warnaar's Theorem 1.1
+    (<a class="arxiv" href="https://arxiv.org/abs/2101.01966" target="_blank">arXiv:2101.01966</a>)
+    proves the <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span>, which implies
     Conjecture 2.1, which in turn implies the positivity of $a^G_{\lambda;r}(q)$.
     Theorem 2.2 specializes to Conjecture 2.8, a close neighbour of 2.7.
+    The foundational machinery is the $A_2$ Bailey tree
+    (<a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a>),
+    extending the classical Bailey lattice of Andrews-Schilling-Warnaar
+    (<a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a>).
     The chain is:
   </p>
   $$\text{Thm 1.1} \xrightarrow{\text{implies}} \text{Conj 2.1}
@@ -200,16 +207,21 @@
   <p>
     Exhibit a combinatorial object counted by $a^G_{\lambda;r}(q)$. The knowledge graph
     traces a 5-hop path from <span class="wlink" data-page="cylindric">cylindric partitions</span>
-    through Korff's Theorem 1.6 to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
+    through Korff's Theorem 1.6
+    (<a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a>)
+    to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
     and on to Conjecture 2.8. Corteel-Dousse-Uncu's weighted cylindric partitions
+    (<a class="arxiv" href="https://arxiv.org/abs/1911.13006" target="_blank">arXiv:1911.13006</a>)
     may supply the right generating function interpretation.
   </p>
 
   <h3><span class="tag t3">③</span> <span class="wlink" data-page="hall-littlewood">Hall-Littlewood / Schur Positivity</span> (representation-theoretic)</h3>
   <p>
-    Theorem 1.1 extends Corollaries 3.1–3.4 from Warnaar's 2006 Hall-Littlewood paper.
+    Theorem 1.1 extends Corollaries 3.1–3.4 from Warnaar's 2006 Hall-Littlewood paper
+    (<a class="arxiv" href="https://arxiv.org/abs/math/0607258" target="_blank">arXiv:math/0607258</a>).
     <span class="wlink" data-page="schur-positivity">Schur positivity</span> connects to
-    <span class="wlink" data-page="llt">LLT polynomials</span> via Assaf's dual equivalence graphs,
+    <span class="wlink" data-page="llt">LLT polynomials</span> via Assaf's dual equivalence graphs
+    (<a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a>),
     and <span class="wlink" data-page="lr-coefficients">Littlewood-Richardson coefficients</span>
     appear directly in Theorem 1.1. This route would prove positivity by expressing
     $a^G_{\lambda;r}(q)$ in a known positive basis.
@@ -222,6 +234,20 @@
     are the most connected entity in the graph — every attack vector passes through them.
     Understanding the $A_2$ generalization of RR is prerequisite to all three approaches.
   </div>
+
+  <h2>Core References</h2>
+  <table class="edges">
+    <tr><th>Paper</th><th>Authors</th><th>Role in Conjecture 2.7</th></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/2101.01966" target="_blank">arXiv:2101.01966</a></td><td>Warnaar</td><td>Source paper — states Conjecture 2.7, proves $A_2$ Andrews-Gordon identities</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a></td><td>Warnaar</td><td>The $A_2$ Bailey tree — proves Kanade-Russell conjectures via higher-rank Bailey machinery</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a></td><td>Andrews, Schilling, Warnaar</td><td>Original $A_2$ Bailey lemma and Bailey lattice (1999)</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1911.13006" target="_blank">arXiv:1911.13006</a></td><td>Corteel, Dousse, Uncu</td><td>Weighted cylindric partitions — potential combinatorial interpretation</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a></td><td>Korff</td><td>Cylindric Macdonald functions via Yang-Baxter equation</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/0607258" target="_blank">arXiv:math/0607258</a></td><td>Warnaar</td><td>Hall-Littlewood functions and $A_2$ Rogers-Ramanujan identities</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1506.02755" target="_blank">arXiv:1506.02755</a></td><td>Rains, Warnaar</td><td>Bounded Littlewood identities — Schur positivity route</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a></td><td>Assaf</td><td>Dual equivalence graphs — combinatorial proof of LLT Schur positivity</td></tr>
+    <tr><td><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a></td><td>Warnaar</td><td>50 Years of Bailey's lemma — comprehensive survey</td></tr>
+  </table>
 </div>
 
 <!-- ════════════ ATTACK VECTOR 1: A2 BAILEY ════════════ -->
