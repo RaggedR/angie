@@ -6,129 +6,129 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body, {
-    delimiters: [
-      {left: '$$', right: '$$', display: true},
-      {left: '$', right: '$', display: false}
-    ]
-  });"></script>
+ onload="renderMathInElement(document.body, {
+  delimiters: [
+   {left: '$$', right: '$$', display: true},
+   {left: '$', right: '$', display: false}
+  ]
+ });"></script>
 <style>
-  :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1c2333;
-    --border: #30363d;
-    --text: #c9d1d9;
-    --text-dim: #8b949e;
-    --link: #58a6ff;
-    --main1: #f0883e; /* A2 Bailey — amber */
-    --main2: #3fb950; /* Cylindric — green */
-    --main3: #bc8cff; /* Hall-Littlewood — purple */
-    --accent: #f78166;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
+ :root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2333;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-dim: #8b949e;
+  --link: #58a6ff;
+  --main1: #f0883e; /* A2 Bailey — amber */
+  --main2: #3fb950; /* Cylindric — green */
+  --main3: #bc8cff; /* Hall-Littlewood — purple */
+  --accent: #f78166;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body {
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+ }
 
-  /* Layout */
-  .shell { display: flex; height: 100vh; }
-  nav {
-    width: 280px; min-width: 280px; background: var(--surface);
-    border-right: 1px solid var(--border); overflow-y: auto; padding: 20px 0;
-  }
-  main {
-    flex: 1; overflow-y: auto; padding: 40px 60px;
-    max-width: 900px;
-  }
+ /* Layout */
+ .shell { display: flex; height: 100vh; }
+ nav {
+  width: 280px; min-width: 280px; background: var(--surface);
+  border-right: 1px solid var(--border); overflow-y: auto; padding: 20px 0;
+ }
+ main {
+  flex: 1; overflow-y: auto; padding: 40px 60px;
+  max-width: 900px;
+ }
 
-  /* Nav */
-  nav h2 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px;
-    color: var(--text-dim); padding: 0 20px; margin-bottom: 8px;
-  }
-  nav .brand {
-    font-size: 15px; font-weight: 700; color: var(--text);
-    padding: 0 20px 16px; border-bottom: 1px solid var(--border);
-    margin-bottom: 16px; text-transform: none; letter-spacing: 0;
-  }
-  nav a {
-    display: block; padding: 6px 20px; color: var(--text-dim);
-    text-decoration: none; font-size: 14px; border-left: 3px solid transparent;
-    transition: all 0.15s;
-  }
-  nav a:hover { color: var(--text); background: var(--surface2); }
-  nav a.active { color: #fff; border-left-color: var(--link); background: var(--surface2); }
-  nav a.main1 { color: var(--main1); font-weight: 600; }
-  nav a.main2 { color: var(--main2); font-weight: 600; }
-  nav a.main3 { color: var(--main3); font-weight: 600; }
-  nav a.main1.active { border-left-color: var(--main1); }
-  nav a.main2.active { border-left-color: var(--main2); }
-  nav a.main3.active { border-left-color: var(--main3); }
-  nav .sep { height: 1px; background: var(--border); margin: 12px 20px; }
-  nav .indent { padding-left: 36px; font-size: 13px; }
+ /* Nav */
+ nav h2 {
+  font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--text-dim); padding: 0 20px; margin-bottom: 8px;
+ }
+ nav .brand {
+  font-size: 15px; font-weight: 700; color: var(--text);
+  padding: 0 20px 16px; border-bottom: 1px solid var(--border);
+  margin-bottom: 16px; text-transform: none; letter-spacing: 0;
+ }
+ nav a {
+  display: block; padding: 6px 20px; color: var(--text-dim);
+  text-decoration: none; font-size: 14px; border-left: 3px solid transparent;
+  transition: all 0.15s;
+ }
+ nav a:hover { color: var(--text); background: var(--surface2); }
+ nav a.active { color: #fff; border-left-color: var(--link); background: var(--surface2); }
+ nav a.main1 { color: var(--main1); font-weight: 600; }
+ nav a.main2 { color: var(--main2); font-weight: 600; }
+ nav a.main3 { color: var(--main3); font-weight: 600; }
+ nav a.main1.active { border-left-color: var(--main1); }
+ nav a.main2.active { border-left-color: var(--main2); }
+ nav a.main3.active { border-left-color: var(--main3); }
+ nav .sep { height: 1px; background: var(--border); margin: 12px 20px; }
+ nav .indent { padding-left: 36px; font-size: 13px; }
 
-  /* Content */
-  .page { display: none; }
-  .page.active { display: block; }
-  .page h1 { font-size: 28px; margin-bottom: 8px; }
-  .page h1.c1 { color: var(--main1); }
-  .page h1.c2 { color: var(--main2); }
-  .page h1.c3 { color: var(--main3); }
-  .page .subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; }
-  .page h2 { font-size: 20px; margin: 28px 0 12px; color: #e6edf3; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-  .page h3 { font-size: 16px; margin: 20px 0 8px; color: #e6edf3; }
-  .page p { margin-bottom: 14px; }
-  .page ul, .page ol { margin: 0 0 14px 24px; }
-  .page li { margin-bottom: 6px; }
-  .page code { background: var(--surface2); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+ /* Content */
+ .page { display: none; }
+ .page.active { display: block; }
+ .page h1 { font-size: 28px; margin-bottom: 8px; }
+ .page h1.c1 { color: var(--main1); }
+ .page h1.c2 { color: var(--main2); }
+ .page h1.c3 { color: var(--main3); }
+ .page .subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; }
+ .page h2 { font-size: 20px; margin: 28px 0 12px; color: #e6edf3; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+ .page h3 { font-size: 16px; margin: 20px 0 8px; color: #e6edf3; }
+ .page p { margin-bottom: 14px; }
+ .page ul, .page ol { margin: 0 0 14px 24px; }
+ .page li { margin-bottom: 6px; }
+ .page code { background: var(--surface2); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
 
-  /* Internal links */
-  .wlink {
-    color: var(--link); cursor: pointer; text-decoration: none;
-    border-bottom: 1px dotted var(--link);
-  }
-  .wlink:hover { color: #79c0ff; border-bottom-style: solid; }
-  h3 .wlink { font-size: 16px; }
+ /* Internal links */
+ .wlink {
+  color: var(--link); cursor: pointer; text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+ }
+ .wlink:hover { color: #79c0ff; border-bottom-style: solid; }
+ h3 .wlink { font-size: 16px; }
 
-  /* Graph edges table */
-  .edges {
-    width: 100%; border-collapse: collapse; margin: 12px 0 20px;
-    font-size: 14px;
-  }
-  .edges th {
-    text-align: left; padding: 8px 12px; background: var(--surface2);
-    border-bottom: 2px solid var(--border); color: var(--text-dim);
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
-  }
-  .edges td {
-    padding: 6px 12px; border-bottom: 1px solid var(--border);
-  }
-  .edges .rel { color: var(--accent); font-family: monospace; font-size: 13px; }
-  .edges .paper { color: var(--text-dim); font-size: 12px; }
-  .edges .paper a, .arxiv { color: #58a6ff; text-decoration: none; }
-  .edges .paper a:hover, .arxiv:hover { text-decoration: underline; }
+ /* Graph edges table */
+ .edges {
+  width: 100%; border-collapse: collapse; margin: 12px 0 20px;
+  font-size: 14px;
+ }
+ .edges th {
+  text-align: left; padding: 8px 12px; background: var(--surface2);
+  border-bottom: 2px solid var(--border); color: var(--text-dim);
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+ }
+ .edges td {
+  padding: 6px 12px; border-bottom: 1px solid var(--border);
+ }
+ .edges .rel { color: var(--accent); font-family: monospace; font-size: 13px; }
+ .edges .paper { color: var(--text-dim); font-size: 12px; }
+ .edges .paper a, .arxiv { color: #58a6ff; text-decoration: none; }
+ .edges .paper a:hover, .arxiv:hover { text-decoration: underline; }
 
-  /* Tag badges */
-  .tag {
-    display: inline-block; padding: 2px 8px; border-radius: 12px;
-    font-size: 11px; font-weight: 600; margin-right: 4px;
-  }
-  .tag.t1 { background: rgba(240,136,62,0.15); color: var(--main1); }
-  .tag.t2 { background: rgba(63,185,80,0.15); color: var(--main2); }
-  .tag.t3 { background: rgba(188,140,255,0.15); color: var(--main3); }
+ /* Tag badges */
+ .tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  font-size: 11px; font-weight: 600; margin-right: 4px;
+ }
+ .tag.t1 { background: rgba(240,136,62,0.15); color: var(--main1); }
+ .tag.t2 { background: rgba(63,185,80,0.15); color: var(--main2); }
+ .tag.t3 { background: rgba(188,140,255,0.15); color: var(--main3); }
 
-  /* Callout box */
-  .callout {
-    background: var(--surface2); border-left: 3px solid var(--link);
-    padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 16px 0;
-    font-size: 14px;
-  }
-  .callout.warn { border-left-color: var(--main1); }
-  .callout.success { border-left-color: var(--main2); }
-  .callout.info { border-left-color: var(--main3); }
+ /* Callout box */
+ .callout {
+  background: var(--surface2); border-left: 3px solid var(--link);
+  padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 16px 0;
+  font-size: 14px;
+ }
+ .callout.warn { border-left-color: var(--main1); }
+ .callout.success { border-left-color: var(--main2); }
+ .callout.info { border-left-color: var(--main3); }
 </style>
 </head>
 <body>
@@ -136,36 +136,36 @@
 
 <!-- ─── Sidebar ─── -->
 <nav>
-  <h2 class="brand">Warnaar 2.7 Wiki</h2>
+ <h2 class="brand">Warnaar 2.7 Wiki</h2>
 
-  <a href="#" data-page="home" class="active">Overview</a>
-  <div class="sep"></div>
+ <a href="#" data-page="home" class="active">Overview</a>
+ <div class="sep"></div>
 
-  <h2>Attack Vectors</h2>
-  <a href="#" data-page="bailey" class="main1">① A2 Bailey Lemma</a>
-  <a href="#" data-page="cylindric" class="main2">② Cylindric Partitions</a>
-  <a href="#" data-page="hall-littlewood" class="main3">③ Hall-Littlewood / Schur</a>
-  <div class="sep"></div>
+ <h2>Attack Vectors</h2>
+ <a href="#" data-page="bailey" class="main1">① A2 Bailey Lemma</a>
+ <a href="#" data-page="cylindric" class="main2">② Cylindric Partitions</a>
+ <a href="#" data-page="hall-littlewood" class="main3">③ Hall-Littlewood / Schur</a>
+ <div class="sep"></div>
 
-  <h2>Key Concepts</h2>
-  <a href="#" data-page="rr" class="indent">Rogers-Ramanujan Identities</a>
-  <a href="#" data-page="bailey-pair" class="indent">Bailey Pairs</a>
-  <a href="#" data-page="bailey-lattice" class="indent">Bailey Lattice</a>
-  <a href="#" data-page="andrews-gordon" class="indent">Andrews-Gordon Identities</a>
-  <a href="#" data-page="kanade-russell" class="indent">Kanade–Russell Conjecture</a>
-  <a href="#" data-page="theta" class="indent">Theta Functions</a>
-  <a href="#" data-page="jacobi" class="indent">Jacobi Triple Product</a>
-  <a href="#" data-page="constant-term" class="indent">Constant Term Method</a>
-  <a href="#" data-page="lr-coefficients" class="indent">Littlewood-Richardson</a>
-  <a href="#" data-page="schur-positivity" class="indent">Schur Positivity</a>
-  <a href="#" data-page="llt" class="indent">LLT Polynomials</a>
-  <a href="#" data-page="hard-hexagon" class="indent">Hard Hexagon Model</a>
-  <a href="#" data-page="level-rank" class="indent">Level-Rank Duality</a>
-  <a href="#" data-page="involution" class="indent">Involution Principle</a>
-  <div class="sep"></div>
+ <h2>Key Concepts</h2>
+ <a href="#" data-page="rr" class="indent">Rogers-Ramanujan Identities</a>
+ <a href="#" data-page="bailey-pair" class="indent">Bailey Pairs</a>
+ <a href="#" data-page="bailey-lattice" class="indent">Bailey Lattice</a>
+ <a href="#" data-page="andrews-gordon" class="indent">Andrews-Gordon Identities</a>
+ <a href="#" data-page="kanade-russell" class="indent">Kanade–Russell Conjecture</a>
+ <a href="#" data-page="theta" class="indent">Theta Functions</a>
+ <a href="#" data-page="jacobi" class="indent">Jacobi Triple Product</a>
+ <a href="#" data-page="constant-term" class="indent">Constant Term Method</a>
+ <a href="#" data-page="lr-coefficients" class="indent">Littlewood-Richardson</a>
+ <a href="#" data-page="schur-positivity" class="indent">Schur Positivity</a>
+ <a href="#" data-page="llt" class="indent">LLT Polynomials</a>
+ <a href="#" data-page="hard-hexagon" class="indent">Hard Hexagon Model</a>
+ <a href="#" data-page="level-rank" class="indent">Level-Rank Duality</a>
+ <a href="#" data-page="involution" class="indent">Involution Principle</a>
+ <div class="sep"></div>
 
-  <h2>Key Papers</h2>
-  <a href="#" data-page="papers" class="indent">Bibliography</a>
+ <h2>Key Papers</h2>
+ <a href="#" data-page="papers" class="indent">Bibliography</a>
 </nav>
 
 <!-- ─── Content ─── -->
@@ -173,763 +173,765 @@
 
 <!-- ════════════ HOME ════════════ -->
 <div class="page active" id="page-home">
-  <h1>Proving Warnaar's Conjecture 2.7</h1>
-  <p class="subtitle">A knowledge-graph-guided strategy map</p>
+ <h1>Proving Warnaar's Conjecture 2.7</h1>
+ <p class="subtitle">A knowledge-graph-guided strategy map</p>
 
-  <div class="callout">
-    <strong>The conjecture.</strong> Warnaar's Conjecture 2.7
-    (<a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a>,
-    <em>$A_2$ Andrews-Gordon identities</em>)
-    asserts the <em>positivity</em> of certain $q$-series coefficients $a^G_{\lambda;r}(q)$
-    arising from the $A_2$ generalization of the Andrews-Gordon identities.
-    Specifically, the polynomial $a^G_{\lambda;r}(q)$ should have non-negative integer coefficients.
-  </div>
+ <div class="callout">
+  <strong>The conjecture.</strong> Warnaar's Conjecture 2.7
+  (<a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a>,
+  <em>$A_2$ Andrews-Gordon identities</em>)
+  asserts the <em>positivity</em> of certain $q$-series coefficients $a^G_{\lambda;r}(q)$
+  arising from the $A_2$ generalization of the Andrews-Gordon identities.
+  Specifically, the polynomial $a^G_{\lambda;r}(q)$ should have non-negative integer coefficients.
+ </div>
 
-  <h2>Three Attack Vectors</h2>
-  <p>The knowledge graph reveals three main routes toward a proof, each with different strengths:</p>
+ <h2>Three Attack Vectors</h2>
+ <p>The knowledge graph reveals three main routes toward a proof, each with different strengths:</p>
 
-  <h3><span class="tag t1">①</span> <span class="wlink" data-page="bailey">The $A_2$ Bailey Lemma</span> (algebraic, most direct)</h3>
-  <p>
-    The most direct path through the graph. Warnaar's Theorem 1.1
-    (<a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a>)
-    proves the <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span>, which implies
-    Conjecture 2.1, which in turn implies the positivity of $a^G_{\lambda;r}(q)$.
-    Theorem 2.2 specializes to Conjecture 2.8, a close neighbour of 2.7.
-    The foundational machinery is the $A_2$ Bailey tree
-    (<a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a>),
-    extending the classical Bailey lattice of Andrews-Schilling-Warnaar
-    (<a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a>).
-    The chain is:
-  </p>
-  $$\text{Thm 1.1} \xrightarrow{\text{implies}} \text{Conj 2.1}
-    \xrightarrow{\text{implies}} a^G_{\lambda;r}(q) \geq 0$$
+ <h3><span class="tag t1">①</span> <span class="wlink" data-page="bailey">The $A_2$ Bailey Lemma</span> (algebraic, most direct)</h3>
+ <p>
+  The most direct path through the graph. Warnaar's Theorem 1.1
+  (<a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a>)
+  proves the <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span>, which implies
+  Conjecture 2.1, which in turn implies the positivity of $a^G_{\lambda;r}(q)$.
+  Theorem 2.2 specializes to Conjecture 2.8, a close neighbour of 2.7.
+  The foundational machinery is the $A_2$ Bailey tree
+  ,
+  extending the classical Bailey lattice of Andrews-Schilling-Warnaar
+  (<a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a>).
+  The chain is:
+ </p>
+ $$\text{Thm 1.1} \xrightarrow{\text{implies}} \text{Conj 2.1}
+  \xrightarrow{\text{implies}} a^G_{\lambda;r}(q) \geq 0$$
 
-  <h3><span class="tag t2">②</span> <span class="wlink" data-page="cylindric">Cylindric Partitions</span> (combinatorial)</h3>
-  <p>
-    Exhibit a combinatorial object counted by $a^G_{\lambda;r}(q)$. The knowledge graph
-    traces a 5-hop path from <span class="wlink" data-page="cylindric">cylindric partitions</span>
-    through Korff's Theorem 1.6
-    (<a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a>)
-    to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
-    and on to Conjecture 2.8. Corteel-Dousse-Uncu's weighted cylindric partitions
-    (<a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a>)
-    may supply the right generating function interpretation.
-  </p>
+ <h3><span class="tag t2">②</span> <span class="wlink" data-page="cylindric">Cylindric Partitions</span> (combinatorial)</h3>
+ <p>
+  Exhibit a combinatorial object counted by $a^G_{\lambda;r}(q)$. The knowledge graph
+  traces a 5-hop path from <span class="wlink" data-page="cylindric">cylindric partitions</span>
+  through Korff's Theorem 1.6
+  (<a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a>)
+  to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
+  and on to Conjecture 2.8. Corteel-Dousse-Uncu's weighted cylindric partitions
+  
+  may supply the right generating function interpretation.
+ </p>
 
-  <h3><span class="tag t3">③</span> <span class="wlink" data-page="hall-littlewood">Hall-Littlewood / Schur Positivity</span> (representation-theoretic)</h3>
-  <p>
-    Theorem 1.1 extends Corollaries 3.1–3.4 from Warnaar's 2006 Hall-Littlewood paper
-    (<a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a>).
-    <span class="wlink" data-page="schur-positivity">Schur positivity</span> connects to
-    <span class="wlink" data-page="llt">LLT polynomials</span> via Assaf's dual equivalence graphs
-    (<a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a>),
-    and <span class="wlink" data-page="lr-coefficients">Littlewood-Richardson coefficients</span>
-    appear directly in Theorem 1.1. This route would prove positivity by expressing
-    $a^G_{\lambda;r}(q)$ in a known positive basis.
-  </p>
+ <h3><span class="tag t3">③</span> <span class="wlink" data-page="hall-littlewood">Hall-Littlewood / Schur Positivity</span> (representation-theoretic)</h3>
+ <p>
+  Theorem 1.1 extends Corollaries 3.1–3.4 from Warnaar's 2006 Hall-Littlewood paper
+  (<a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a>).
+  <span class="wlink" data-page="schur-positivity">Schur positivity</span> connects to
+  <span class="wlink" data-page="llt">LLT polynomials</span> via Assaf's dual equivalence graphs
+  (<a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a>),
+  and <span class="wlink" data-page="lr-coefficients">Littlewood-Richardson coefficients</span>
+  appear directly in Theorem 1.1. This route would prove positivity by expressing
+  $a^G_{\lambda;r}(q)$ in a known positive basis.
+ </p>
 
-  <h2>Dependency Skeleton</h2>
-  <p>Below is the logical dependency chain extracted from the knowledge graph (1,765 nodes, 3,348 edges):</p>
-  <div class="callout warn">
-    <strong>Central node:</strong> The <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
-    are the most connected entity in the graph — every attack vector passes through them.
-    Understanding the $A_2$ generalization of RR is prerequisite to all three approaches.
-  </div>
+ <h2>Dependency Skeleton</h2>
+ <p>Below is the logical dependency chain extracted from the knowledge graph (1,765 nodes, 3,348 edges):</p>
+ <div class="callout warn">
+  <strong>Central node:</strong> The <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
+  are the most connected entity in the graph — every attack vector passes through them.
+  Understanding the $A_2$ generalization of RR is prerequisite to all three approaches.
+ </div>
 
-  <h2>Core References</h2>
-  <table class="edges">
-    <tr><th>Paper</th><th>Authors</th><th>Role in Conjecture 2.7</th></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a></td><td>Warnaar</td><td>Source paper — states Conjecture 2.7, proves $A_2$ Andrews-Gordon identities</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a></td><td>Warnaar</td><td>The $A_2$ Bailey tree — proves Kanade-Russell conjectures via higher-rank Bailey machinery</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a></td><td>Andrews, Schilling, Warnaar</td><td>Original $A_2$ Bailey lemma and Bailey lattice (1999)</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a></td><td>Corteel, Dousse, Uncu</td><td>Weighted cylindric partitions — potential combinatorial interpretation</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a></td><td>Korff</td><td>Cylindric Macdonald functions via Yang-Baxter equation</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a></td><td>Warnaar</td><td>Hall-Littlewood functions and $A_2$ Rogers-Ramanujan identities</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1506.02755" target="_blank">arXiv:1506.02755</a></td><td>Rains, Warnaar</td><td>Bounded Littlewood identities — Schur positivity route</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a></td><td>Assaf</td><td>Dual equivalence graphs — combinatorial proof of LLT Schur positivity</td></tr>
-    <tr><td><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a></td><td>Warnaar</td><td>50 Years of Bailey's lemma — comprehensive survey</td></tr>
-  </table>
+ <h2>Core References</h2>
+ <table class="edges">
+  <tr><th>Paper</th><th>Authors</th><th>Role in Conjecture 2.7</th></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a></td><td>Warnaar</td><td>Source paper — states Conjecture 2.7, proves $A_2$ Andrews-Gordon identities</td></tr>
+  <tr><td></td><td>Warnaar</td><td>The $A_2$ Bailey tree — proves Kanade-Russell conjectures via higher-rank Bailey machinery</td></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a></td><td>Andrews, Schilling, Warnaar</td><td>Original $A_2$ Bailey lemma and Bailey lattice (1999)</td></tr>
+  <tr><td></td><td>Corteel, Dousse, Uncu</td><td>Weighted cylindric partitions — potential combinatorial interpretation</td></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a></td><td>Korff</td><td>Cylindric Macdonald functions via Yang-Baxter equation</td></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a></td><td>Warnaar</td><td>Hall-Littlewood functions and $A_2$ Rogers-Ramanujan identities</td></tr>
+  <tr><td></td><td>Rains, Warnaar</td><td>Bounded Littlewood identities — Schur positivity route</td></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a></td><td>Assaf</td><td>Dual equivalence graphs — combinatorial proof of LLT Schur positivity</td></tr>
+  <tr><td><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a></td><td>Warnaar</td><td>50 Years of Bailey's lemma — comprehensive survey</td></tr>
+ </table>
 </div>
 
 <!-- ════════════ ATTACK VECTOR 1: A2 BAILEY ════════════ -->
 <div class="page" id="page-bailey">
-  <h1 class="c1">① The $A_2$ Bailey Lemma</h1>
-  <p class="subtitle"><span class="tag t1">Main Page</span> Algebraic approach — most direct route to Conjecture 2.7</p>
+ <h1 class="c1">① The $A_2$ Bailey Lemma</h1>
+ <p class="subtitle"><span class="tag t1">Main Page</span> Algebraic approach — most direct route to Conjecture 2.7</p>
 
-  <h2>Overview</h2>
-  <p>
-    The classical Bailey lemma produces Rogers-Ramanujan-type identities from
-    <span class="wlink" data-page="bailey-pair">Bailey pairs</span> $(\alpha_n, \beta_n)$
-    satisfying:
-  </p>
-  $$\beta_n = \sum_{r=0}^{n} \frac{\alpha_r}{(q)_{n-r}(aq)_{n+r}}$$
-  <p>
-    Warnaar's $A_2$ generalization replaces the single index $n$ with a pair of indices
-    $(n_1, n_2)$ and works with the root system of $\mathfrak{sl}_3$. The $A_2$ Bailey lemma
-    (Theorem 1.1 of <code>warnaar_2021_A2_andrews_gordon</code>) extends the
-    <span class="wlink" data-page="bailey-lattice">Bailey lattice</span> to this higher-rank setting.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The classical Bailey lemma produces Rogers-Ramanujan-type identities from
+  <span class="wlink" data-page="bailey-pair">Bailey pairs</span> $(\alpha_n, \beta_n)$
+  satisfying:
+ </p>
+ $$\beta_n = \sum_{r=0}^{n} \frac{\alpha_r}{(q)_{n-r}(aq)_{n+r}}$$
+ <p>
+  Warnaar's $A_2$ generalization replaces the single index $n$ with a pair of indices
+  $(n_1, n_2)$ and works with the root system of $\mathfrak{sl}_3$. The $A_2$ Bailey lemma
+  (Theorem 1.1 of <code>warnaar_2021_A2_andrews_gordon</code>) extends the
+  <span class="wlink" data-page="bailey-lattice">Bailey lattice</span> to this higher-rank setting.
+ </p>
 
-  <h2>The Chain to Conjecture 2.7</h2>
-  <ol>
-    <li><strong>Theorem 1.1</strong> establishes the $A_2$ Bailey lemma, defining $A_2$ <span class="wlink" data-page="bailey-pair">Bailey pairs</span></li>
-    <li><strong>Conjecture 2.1</strong> uses the $A_2$ Bailey lemma and is equivalent to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span></li>
-    <li>Conjecture 2.1 implies the positivity of $a^G_{\lambda;r}(q)$ — this is the content of <strong>Conjecture 2.7</strong></li>
-    <li><strong>Theorem 2.2</strong> proves <span class="wlink" data-page="andrews-gordon">Gordon's theorem</span> and specializes to <strong>Conjecture 2.8</strong></li>
-  </ol>
+ <h2>The Chain to Conjecture 2.7</h2>
+ <ol>
+  <li><strong>Theorem 1.1</strong> establishes the $A_2$ Bailey lemma, defining $A_2$ <span class="wlink" data-page="bailey-pair">Bailey pairs</span></li>
+  <li><strong>Conjecture 2.1</strong> uses the $A_2$ Bailey lemma and is equivalent to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span></li>
+  <li>Conjecture 2.1 implies the positivity of $a^G_{\lambda;r}(q)$ — this is the content of <strong>Conjecture 2.7</strong></li>
+  <li><strong>Theorem 2.2</strong> proves <span class="wlink" data-page="andrews-gordon">Gordon's theorem</span> and specializes to <strong>Conjecture 2.8</strong></li>
+ </ol>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>$A_2$ Bailey lemma</td><td class="rel">uses</td><td>Theorem 1.1</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>$A_2$ Bailey lemma</td><td class="rel">extends</td><td><span class="wlink" data-page="bailey-lattice">Bailey lattice</span></td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
-    <tr><td>Conjecture 2.1</td><td class="rel">uses</td><td>$A_2$ Bailey lemma</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Conjecture 2.1</td><td class="rel">equivalent to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>Conjecture 2.1</td><td class="rel">implies</td><td>$a^G_{\lambda;r}(q)$</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Theorem 2.2</td><td class="rel">specializes to</td><td>Conjecture 2.8</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Theorem 2.2</td><td class="rel">proves</td><td><span class="wlink" data-page="andrews-gordon">Gordon's theorem</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>$A_2$ Bailey tree</td><td class="rel">extends</td><td>$A_2$ Bailey lemma</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>$A_2$ Bailey tree</td><td class="rel">extends</td><td><span class="wlink" data-page="kanade-russell">Kanade–Russell conjecture</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">implies</td><td><span class="wlink" data-page="level-rank">Level-rank duality</span></td><td class="paper">warnaar_RR_identities</td></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">uses</td><td><span class="wlink" data-page="lr-coefficients">LR coefficients</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>$A_2$ Bailey lemma</td><td class="rel">uses</td><td>Theorem 1.1</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>$A_2$ Bailey lemma</td><td class="rel">extends</td><td><span class="wlink" data-page="bailey-lattice">Bailey lattice</span></td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
+  <tr><td>Conjecture 2.1</td><td class="rel">uses</td><td>$A_2$ Bailey lemma</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Conjecture 2.1</td><td class="rel">equivalent to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>Conjecture 2.1</td><td class="rel">implies</td><td>$a^G_{\lambda;r}(q)$</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Theorem 2.2</td><td class="rel">specializes to</td><td>Conjecture 2.8</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Theorem 2.2</td><td class="rel">proves</td><td><span class="wlink" data-page="andrews-gordon">Gordon's theorem</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>$A_2$ Bailey tree</td><td class="rel">extends</td><td>$A_2$ Bailey lemma</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>$A_2$ Bailey tree</td><td class="rel">extends</td><td><span class="wlink" data-page="kanade-russell">Kanade–Russell conjecture</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">implies</td><td><span class="wlink" data-page="level-rank">Level-rank duality</span></td><td class="paper">warnaar_RR_identities</td></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">uses</td><td><span class="wlink" data-page="lr-coefficients">LR coefficients</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+ </table>
 
-  <h2>What Would a Proof Look Like?</h2>
-  <p>
-    To prove Conjecture 2.7 via this route, one would need to show that the $A_2$ Bailey
-    machinery produces expressions whose $q$-coefficients are manifestly non-negative.
-    Two sub-strategies:
-  </p>
-  <ul>
-    <li><strong>Analytic:</strong> Find a closed-form or transformation of $a^G_{\lambda;r}(q)$
-      as a sum of products of $q$-binomials (which are known to be positive)</li>
-    <li><strong>Combinatorial:</strong> Interpret the Bailey pair construction as counting
-      lattice paths or partition-like objects, giving a direct combinatorial proof of positivity</li>
-  </ul>
+ <h2>What Would a Proof Look Like?</h2>
+ <p>
+  To prove Conjecture 2.7 via this route, one would need to show that the $A_2$ Bailey
+  machinery produces expressions whose $q$-coefficients are manifestly non-negative.
+  Two sub-strategies:
+ </p>
+ <ul>
+  <li><strong>Analytic:</strong> Find a closed-form or transformation of $a^G_{\lambda;r}(q)$
+   as a sum of products of $q$-binomials (which are known to be positive)</li>
+  <li><strong>Combinatorial:</strong> Interpret the Bailey pair construction as counting
+   lattice paths or partition-like objects, giving a direct combinatorial proof of positivity</li>
+ </ul>
 
-  <div class="callout warn">
-    <strong>Key difficulty.</strong> The $A_2$ Bailey lemma involves double sums and $\mathfrak{sl}_3$ weight
-    lattice structure. Positivity is not automatic from the algebraic identity — one needs
-    either cancellation-free expressions or a combinatorial interpretation.
-  </div>
+ <div class="callout warn">
+  <strong>Key difficulty.</strong> The $A_2$ Bailey lemma involves double sums and $\mathfrak{sl}_3$ weight
+  lattice structure. Positivity is not automatic from the algebraic identity — one needs
+  either cancellation-free expressions or a combinatorial interpretation.
+ </div>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (source of Conjecture 2.7)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — Warnaar, <em>50 Years of Bailey's lemma</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1309.5216" target="_blank">arXiv:1309.5216</a> — Warnaar, <em>The $A_{2n}^{(2)}$ Rogers-Ramanujan identities</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (source of Conjecture 2.7)</li>
+  <li>Warnaar, <em>The $A_2$ Bailey tree</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — Warnaar, <em>50 Years of Bailey's lemma</em></li>
+  <li>Warnaar, <em>The $A_{2n}^{(2)}$ Rogers-Ramanujan identities</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ ATTACK VECTOR 2: CYLINDRIC ════════════ -->
 <div class="page" id="page-cylindric">
-  <h1 class="c2">② Cylindric Partitions</h1>
-  <p class="subtitle"><span class="tag t2">Main Page</span> Combinatorial approach — exhibit the objects being counted</p>
+ <h1 class="c2">② Cylindric Partitions</h1>
+ <p class="subtitle"><span class="tag t2">Main Page</span> Combinatorial approach — exhibit the objects being counted</p>
 
-  <h2>Overview</h2>
-  <p>
-    A cylindric partition of profile $c = (c_0, c_1, \dots, c_{n-1})$ is a periodic sequence
-    of partitions $\lambda^{(0)}, \lambda^{(1)}, \dots$ on a cylinder, where consecutive
-    partitions interleave:
-  </p>
-  $$\lambda^{(i)}_1 \geq \lambda^{(i+1)}_1 \geq \lambda^{(i)}_2 \geq \lambda^{(i+1)}_2 \geq \cdots$$
-  <p>
-    with the periodicity condition $\lambda^{(i+n)} = \lambda^{(i)} - c$. Their generating
-    functions are intimately connected to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
-    and their generalizations.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  A cylindric partition of profile $c = (c_0, c_1, \dots, c_{n-1})$ is a periodic sequence
+  of partitions $\lambda^{(0)}, \lambda^{(1)}, \dots$ on a cylinder, where consecutive
+  partitions interleave:
+ </p>
+ $$\lambda^{(i)}_1 \geq \lambda^{(i+1)}_1 \geq \lambda^{(i)}_2 \geq \lambda^{(i+1)}_2 \geq \cdots$$
+ <p>
+  with the periodicity condition $\lambda^{(i+n)} = \lambda^{(i)} - c$. Their generating
+  functions are intimately connected to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span>
+  and their generalizations.
+ </p>
 
-  <h2>Path to Conjecture 2.7</h2>
-  <p>The knowledge graph traces a 5-hop path:</p>
-  <ol>
-    <li><strong>Cylindric partitions</strong> specialize to <strong>weighted cylindric partitions</strong> (Corteel-Dousse-Uncu)</li>
-    <li><strong>Theorem 1.6</strong> (Korff) connects cylindric partitions to RR-type identities via the Yang-Baxter equation</li>
-    <li>Cylindric partitions extend to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span></li>
-    <li><strong>Theorem 2.2</strong> (Warnaar) specializes to <strong>Conjecture 2.8</strong></li>
-  </ol>
+ <h2>Path to Conjecture 2.7</h2>
+ <p>The knowledge graph traces a 5-hop path:</p>
+ <ol>
+  <li><strong>Cylindric partitions</strong> specialize to <strong>weighted cylindric partitions</strong> (Corteel-Dousse-Uncu)</li>
+  <li><strong>Theorem 1.6</strong> (Korff) connects cylindric partitions to RR-type identities via the Yang-Baxter equation</li>
+  <li>Cylindric partitions extend to the <span class="wlink" data-page="rr">Rogers-Ramanujan identities</span></li>
+  <li><strong>Theorem 2.2</strong> (Warnaar) specializes to <strong>Conjecture 2.8</strong></li>
+ </ol>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>cylindric partitions</td><td class="rel">specializes to</td><td>weighted cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
-    <tr><td>Theorem 1.6</td><td class="rel">about</td><td>cylindric partitions</td><td class="paper">korff_1110.6356</td></tr>
-    <tr><td>symmetric cylindric partition</td><td class="rel">specializes to</td><td>cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
-    <tr><td>skew double shifted plane partitions</td><td class="rel">extends</td><td>cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">about</td><td>weighted cylindric partitions</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>cylindric partitions</td><td class="rel">specializes to</td><td>weighted cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
+  <tr><td>Theorem 1.6</td><td class="rel">about</td><td>cylindric partitions</td><td class="paper">korff_1110.6356</td></tr>
+  <tr><td>symmetric cylindric partition</td><td class="rel">specializes to</td><td>cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
+  <tr><td>skew double shifted plane partitions</td><td class="rel">extends</td><td>cylindric partitions</td><td class="paper">corteel_dousse_uncu_weighted_cylindric</td></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">about</td><td>weighted cylindric partitions</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+ </table>
 
-  <h2>Why This Could Work</h2>
-  <p>
-    If $a^G_{\lambda;r}(q)$ can be expressed as a generating function over cylindric partitions
-    (or a weighted variant), positivity follows immediately — you are counting objects with
-    non-negative weights. The key challenges:
-  </p>
-  <ul>
-    <li><strong>Find the right profile $c$:</strong> The $A_2$ setting requires cylindric partitions
-      on a cylinder of circumference related to the $\mathfrak{sl}_3$ weight lattice</li>
-    <li><strong>Match the weights:</strong> Corteel-Dousse-Uncu's weighted cylindric partitions
-      already handle general weight functions — can their framework accommodate the $A_2$ specialization?</li>
-    <li><strong>The Korff connection:</strong> Korff's work uses the Yang-Baxter equation and
-      quantum groups to connect cylindric partitions to RR identities — the $A_2$ version of
-      this may directly produce Conjecture 2.7</li>
-  </ul>
+ <h2>Why This Could Work</h2>
+ <p>
+  If $a^G_{\lambda;r}(q)$ can be expressed as a generating function over cylindric partitions
+  (or a weighted variant), positivity follows immediately — you are counting objects with
+  non-negative weights. The key challenges:
+ </p>
+ <ul>
+  <li><strong>Find the right profile $c$:</strong> The $A_2$ setting requires cylindric partitions
+   on a cylinder of circumference related to the $\mathfrak{sl}_3$ weight lattice</li>
+  <li><strong>Match the weights:</strong> Corteel-Dousse-Uncu's weighted cylindric partitions
+   already handle general weight functions — can their framework accommodate the $A_2$ specialization?</li>
+  <li><strong>The Korff connection:</strong> Korff's work uses the Yang-Baxter equation and
+   quantum groups to connect cylindric partitions to RR identities — the $A_2$ version of
+   this may directly produce Conjecture 2.7</li>
+ </ul>
 
-  <div class="callout success">
-    <strong>Promising sign.</strong> Theorem 1.1 (Warnaar) is directly "about" weighted cylindric
-    partitions in the knowledge graph. This suggests Warnaar himself sees this as a
-    natural combinatorial interpretation.
-  </div>
+ <div class="callout success">
+  <strong>Promising sign.</strong> Theorem 1.1 (Warnaar) is directly "about" weighted cylindric
+  partitions in the knowledge graph. This suggests Warnaar himself sees this as a
+  natural combinatorial interpretation.
+ </div>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a> — Corteel, Dousse, Uncu, <em>Weighted cylindric partitions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a> — Korff, <em>Cylindric Macdonald functions and the Yang-Baxter equation</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a> — Corteel, Dousse, Uncu, <em>Cylindric partitions and $A_2$ RR identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2507.02435" target="_blank">arXiv:2507.02435</a> — Barsakci, <em>Weighted words and cylindric partitions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2110.12629" target="_blank">arXiv:2110.12629</a> — Langer, <em>Cylindric plane partitions</em> (PhD thesis)</li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2201.03047" target="_blank">arXiv:2201.03047</a> — Bridges, Uncu, <em>Weighted cylindric partitions</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a> — Korff, <em>Cylindric Macdonald functions and the Yang-Baxter equation</em></li>
+  <li>Corteel, Dousse, Uncu, <em>Cylindric partitions and $A_2$ RR identities</em></li>
+  <li>Barsakci, <em>Weighted words and cylindric partitions</em></li>
+  <li>Langer, <em>Cylindric plane partitions</em> (PhD thesis)</li>
+ </ul>
 </div>
 
 <!-- ════════════ ATTACK VECTOR 3: HALL-LITTLEWOOD ════════════ -->
 <div class="page" id="page-hall-littlewood">
-  <h1 class="c3">③ Hall-Littlewood &amp; Schur Positivity</h1>
-  <p class="subtitle"><span class="tag t3">Main Page</span> Representation-theoretic approach — expand in a positive basis</p>
+ <h1 class="c3">③ Hall-Littlewood &amp; Schur Positivity</h1>
+ <p class="subtitle"><span class="tag t3">Main Page</span> Representation-theoretic approach — expand in a positive basis</p>
 
-  <h2>Overview</h2>
-  <p>
-    The Hall-Littlewood polynomials $P_\lambda(x; t)$ interpolate between Schur functions ($t=0$)
-    and monomial symmetric functions ($t=1$):
-  </p>
-  $$P_\lambda(x; t) = \frac{1}{v_\lambda(t)} \sum_{w \in S_n} w\!\left(
-    x^\lambda \prod_{i < j} \frac{x_i - t x_j}{x_i - x_j}\right)$$
-  <p>
-    Warnaar's 2006 paper establishes $A_2$ Hall-Littlewood identities
-    (Corollaries 3.1–3.4), which Theorem 1.1 of the 2021 paper extends.
-    If $a^G_{\lambda;r}(q)$ can be expressed as a positive combination of
-    Schur functions or <span class="wlink" data-page="llt">LLT polynomials</span>,
-    positivity follows from known results.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The Hall-Littlewood polynomials $P_\lambda(x; t)$ interpolate between Schur functions ($t=0$)
+  and monomial symmetric functions ($t=1$):
+ </p>
+ $$P_\lambda(x; t) = \frac{1}{v_\lambda(t)} \sum_{w \in S_n} w\!\left(
+  x^\lambda \prod_{i < j} \frac{x_i - t x_j}{x_i - x_j}\right)$$
+ <p>
+  Warnaar's 2006 paper establishes $A_2$ Hall-Littlewood identities
+  (Corollaries 3.1–3.4), which Theorem 1.1 of the 2021 paper extends.
+  If $a^G_{\lambda;r}(q)$ can be expressed as a positive combination of
+  Schur functions or <span class="wlink" data-page="llt">LLT polynomials</span>,
+  positivity follows from known results.
+ </p>
 
-  <h2>The Schur Positivity Route</h2>
-  <p>
-    <span class="wlink" data-page="schur-positivity">Schur positivity</span> means expressing
-    a symmetric function as a non-negative linear combination of Schur functions $s_\lambda$.
-    The knowledge graph links this to <span class="wlink" data-page="llt">LLT polynomials</span>,
-    which are known to be Schur-positive (proved by Grojnowski-Haiman using Kazhdan-Lusztig theory).
-  </p>
+ <h2>The Schur Positivity Route</h2>
+ <p>
+  <span class="wlink" data-page="schur-positivity">Schur positivity</span> means expressing
+  a symmetric function as a non-negative linear combination of Schur functions $s_\lambda$.
+  The knowledge graph links this to <span class="wlink" data-page="llt">LLT polynomials</span>,
+  which are known to be Schur-positive (proved by Grojnowski-Haiman using Kazhdan-Lusztig theory).
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">extends</td><td>Corollaries 3.1–3.4</td><td class="paper">warnaar_2006_hall_littlewood_A2</td></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">uses</td><td><span class="wlink" data-page="lr-coefficients">LR coefficients</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Corollary 3.4</td><td class="rel">implies</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_2006_hall_littlewood_A2</td></tr>
-    <tr><td><span class="wlink" data-page="schur-positivity">Schur positivity</span></td><td class="rel">implies</td><td><span class="wlink" data-page="llt">LLT polynomial</span></td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
-    <tr><td>$a_l(q)$</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
-    <tr><td>$c_l(q)$</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">extends</td><td>Corollaries 3.1–3.4</td><td class="paper">warnaar_2006_hall_littlewood_A2</td></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">uses</td><td><span class="wlink" data-page="lr-coefficients">LR coefficients</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Corollary 3.4</td><td class="rel">implies</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_2006_hall_littlewood_A2</td></tr>
+  <tr><td><span class="wlink" data-page="schur-positivity">Schur positivity</span></td><td class="rel">implies</td><td><span class="wlink" data-page="llt">LLT polynomial</span></td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
+  <tr><td>$a_l(q)$</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
+  <tr><td>$c_l(q)$</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
+ </table>
 
-  <h2>What Would a Proof Look Like?</h2>
-  <ul>
-    <li><strong>Step 1:</strong> Express $a^G_{\lambda;r}(q)$ as a specialization of a symmetric function
-      (e.g., as a coefficient in a Hall-Littlewood expansion)</li>
-    <li><strong>Step 2:</strong> Show that this symmetric function is Schur-positive, either by:
-      <ul>
-        <li>Identifying it as an LLT polynomial (automatic Schur positivity)</li>
-        <li>Using Assaf's dual equivalence graphs to construct a Schur expansion</li>
-        <li>Finding a <span class="wlink" data-page="lr-coefficients">Littlewood-Richardson</span> rule for the coefficients</li>
-      </ul>
-    </li>
-    <li><strong>Step 3:</strong> Conclude that $a^G_{\lambda;r}(q) \geq 0$ as a sum of Schur function evaluations</li>
-  </ul>
+ <h2>What Would a Proof Look Like?</h2>
+ <ul>
+  <li><strong>Step 1:</strong> Express $a^G_{\lambda;r}(q)$ as a specialization of a symmetric function
+   (e.g., as a coefficient in a Hall-Littlewood expansion)</li>
+  <li><strong>Step 2:</strong> Show that this symmetric function is Schur-positive, either by:
+   <ul>
+    <li>Identifying it as an LLT polynomial (automatic Schur positivity)</li>
+    <li>Using Assaf's dual equivalence graphs to construct a Schur expansion</li>
+    <li>Finding a <span class="wlink" data-page="lr-coefficients">Littlewood-Richardson</span> rule for the coefficients</li>
+   </ul>
+  </li>
+  <li><strong>Step 3:</strong> Conclude that $a^G_{\lambda;r}(q) \geq 0$ as a sum of Schur function evaluations</li>
+ </ul>
 
-  <div class="callout info">
-    <strong>Connection to positivity-preserving $q$-binomials.</strong> Warnaar's paper
-    <a class="arxiv" href="https://arxiv.org/abs/math/0302320" target="_blank">arXiv:math/0302320</a> studies polynomials $a_l(q)$ and
-    $c_l(q)$ that are related to Rogers-Ramanujan and have positivity properties. These
-    may provide the bridge between the algebraic identities and Schur-positive expressions.
-  </div>
+ <div class="callout info">
+  <strong>Connection to positivity-preserving $q$-binomials.</strong> Warnaar's paper
+   studies polynomials $a_l(q)$ and
+  $c_l(q)$ that are related to Rogers-Ramanujan and have positivity properties. These
+  may provide the bridge between the algebraic identities and Schur-positive expressions.
+ </div>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a> — Warnaar, <em>Hall-Littlewood functions and the $A_2$ RR identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and LLT/Macdonald positivity</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.02755" target="_blank">arXiv:1506.02755</a> — Rains, Warnaar, <em>Bounded Littlewood identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — Alexandersson, Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0302320" target="_blank">arXiv:math/0302320</a> — Warnaar, <em>Positivity-preserving $q$-binomials</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a> — Warnaar, <em>Hall-Littlewood functions and the $A_2$ RR identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and LLT/Macdonald positivity</em></li>
+  <li>Rains, Warnaar, <em>Bounded Littlewood identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — Alexandersson, Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
+  <li>Warnaar, <em>Positivity-preserving $q$-binomials</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: ROGERS-RAMANUJAN ════════════ -->
 <div class="page" id="page-rr">
-  <h1>Rogers-Ramanujan Identities</h1>
-  <p class="subtitle">The central node — every attack vector passes through here</p>
+ <h1>Rogers-Ramanujan Identities</h1>
+ <p class="subtitle">The central node — every attack vector passes through here</p>
 
-  <h2>The Identities</h2>
-  <p>The first Rogers-Ramanujan identity:</p>
-  $$\sum_{n=0}^{\infty} \frac{q^{n^2}}{(q)_n} = \prod_{n=0}^{\infty}
-    \frac{1}{(1-q^{5n+1})(1-q^{5n+4})}$$
-  <p>The second:</p>
-  $$\sum_{n=0}^{\infty} \frac{q^{n^2+n}}{(q)_n} = \prod_{n=0}^{\infty}
-    \frac{1}{(1-q^{5n+2})(1-q^{5n+3})}$$
-  <p>
-    The $A_2$ generalization replaces the modulus 5 structure with modular conditions
-    related to the root system of $\mathfrak{sl}_3$.
-  </p>
+ <h2>The Identities</h2>
+ <p>The first Rogers-Ramanujan identity:</p>
+ $$\sum_{n=0}^{\infty} \frac{q^{n^2}}{(q)_n} = \prod_{n=0}^{\infty}
+  \frac{1}{(1-q^{5n+1})(1-q^{5n+4})}$$
+ <p>The second:</p>
+ $$\sum_{n=0}^{\infty} \frac{q^{n^2+n}}{(q)_n} = \prod_{n=0}^{\infty}
+  \frac{1}{(1-q^{5n+2})(1-q^{5n+3})}$$
+ <p>
+  The $A_2$ generalization replaces the modulus 5 structure with modular conditions
+  related to the root system of $\mathfrak{sl}_3$.
+ </p>
 
-  <h2>Role in Conjecture 2.7</h2>
-  <p>
-    The Rogers-Ramanujan identities are the most connected node in the entire knowledge graph.
-    Conjecture 2.1 is <em>equivalent</em> to these identities (at the $A_2$ level), and
-    every approach to 2.7 ultimately passes through some form of RR generalization.
-  </p>
+ <h2>Role in Conjecture 2.7</h2>
+ <p>
+  The Rogers-Ramanujan identities are the most connected node in the entire knowledge graph.
+  Conjecture 2.1 is <em>equivalent</em> to these identities (at the $A_2$ level), and
+  every approach to 2.7 ultimately passes through some form of RR generalization.
+ </p>
 
-  <h2>Key Connections (selected)</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>RR identities</td><td class="rel">uses</td><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>RR identities</td><td class="rel">generalizes</td><td><span class="wlink" data-page="andrews-gordon">$A_2$ RR identities</span></td><td class="paper">A2_RR_bipartition_level3</td></tr>
-    <tr><td><span class="wlink" data-page="jacobi">Jacobi triple product</span></td><td class="rel">extends/implies</td><td>RR identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td><span class="wlink" data-page="hard-hexagon">Hard hexagon model</span></td><td class="rel">uses</td><td>RR identities</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
-    <tr><td><span class="wlink" data-page="constant-term">Constant term method</span></td><td class="rel">applies to</td><td>RR identities</td><td class="paper">new_old_proof_RR_identities</td></tr>
-    <tr><td><span class="wlink" data-page="involution">Involution principle</span></td><td class="rel">uses</td><td>RR identities</td><td class="paper">zeilberger_garsia_milne_involution</td></tr>
-    <tr><td>Schur's identity</td><td class="rel">equivalent to</td><td>RR identities</td><td class="paper">boulet_combinatorial_proof_RR_schur</td></tr>
-    <tr><td><span class="wlink" data-page="theta">Theta function</span></td><td class="rel">related to</td><td>RR identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-  </table>
+ <h2>Key Connections (selected)</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>RR identities</td><td class="rel">uses</td><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>RR identities</td><td class="rel">generalizes</td><td><span class="wlink" data-page="andrews-gordon">$A_2$ RR identities</span></td><td class="paper">A2_RR_bipartition_level3</td></tr>
+  <tr><td><span class="wlink" data-page="jacobi">Jacobi triple product</span></td><td class="rel">extends/implies</td><td>RR identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td><span class="wlink" data-page="hard-hexagon">Hard hexagon model</span></td><td class="rel">uses</td><td>RR identities</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
+  <tr><td><span class="wlink" data-page="constant-term">Constant term method</span></td><td class="rel">applies to</td><td>RR identities</td><td class="paper">new_old_proof_RR_identities</td></tr>
+  <tr><td><span class="wlink" data-page="involution">Involution principle</span></td><td class="rel">uses</td><td>RR identities</td><td class="paper">zeilberger_garsia_milne_involution</td></tr>
+  <tr><td>Schur's identity</td><td class="rel">equivalent to</td><td>RR identities</td><td class="paper">boulet_combinatorial_proof_RR_schur</td></tr>
+  <tr><td><span class="wlink" data-page="theta">Theta function</span></td><td class="rel">related to</td><td>RR identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater type identities</em> (comprehensive survey)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0411072" target="_blank">arXiv:math/0411072</a> — Boulet, <em>Combinatorial proof of Rogers-Ramanujan</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2211.14717" target="_blank">arXiv:2211.14717</a> — Sills, <em>Rogers-Ramanujan by constant terms</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em></li>
+  <li>Warnaar, <em>The $A_2$ Bailey tree</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater type identities</em> (comprehensive survey)</li>
+  <li>Boulet, <em>Combinatorial proof of Rogers-Ramanujan</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2211.14717" target="_blank">arXiv:2211.14717</a> — Sills, <em>Rogers-Ramanujan by constant terms</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: BAILEY PAIR ════════════ -->
 <div class="page" id="page-bailey-pair">
-  <h1>Bailey Pairs</h1>
-  <p class="subtitle">The engine of Rogers-Ramanujan-type identities</p>
+ <h1>Bailey Pairs</h1>
+ <p class="subtitle">The engine of Rogers-Ramanujan-type identities</p>
 
-  <h2>Definition</h2>
-  <p>A pair of sequences $(\alpha_n, \beta_n)_{n \geq 0}$ is a <strong>Bailey pair relative to $a$</strong> if:</p>
-  $$\beta_n = \sum_{r=0}^{n} \frac{\alpha_r}{(q)_{n-r}(aq)_{n+r}}$$
-  <p>
-    Given any Bailey pair, the <span class="wlink" data-page="bailey-lattice">Bailey lemma</span>
-    produces a new Bailey pair, creating an infinite lattice of identities.
-  </p>
+ <h2>Definition</h2>
+ <p>A pair of sequences $(\alpha_n, \beta_n)_{n \geq 0}$ is a <strong>Bailey pair relative to $a$</strong> if:</p>
+ $$\beta_n = \sum_{r=0}^{n} \frac{\alpha_r}{(q)_{n-r}(aq)_{n+r}}$$
+ <p>
+  Given any Bailey pair, the <span class="wlink" data-page="bailey-lattice">Bailey lemma</span>
+  produces a new Bailey pair, creating an infinite lattice of identities.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Bailey pair</td><td class="rel">defined as</td><td><span class="wlink" data-page="rr">$q$-series</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>Bailey pair</td><td class="rel">defined as</td><td>$q$-hypergeometric series</td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
-    <tr><td>Bailey pair</td><td class="rel">uses</td><td><span class="wlink" data-page="jacobi">Jacobi triple product</span></td><td class="paper">mclaughlin_sills_zimmer_RR_slater_survey</td></tr>
-    <tr><td>Bailey pair</td><td class="rel">instance of</td><td>Type I / Type II</td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
-    <tr><td>conjugate Bailey pair</td><td class="rel">specializes to</td><td>Bailey pair</td><td class="paper">warnaar_50_years_baileys_lemma</td></tr>
-    <tr><td>Bailey chain</td><td class="rel">generalizes</td><td>Bailey pair</td><td class="paper">gessel_krattenthaler_1997</td></tr>
-    <tr><td>$q$-Saalschütz sum</td><td class="rel">applies to</td><td>Bailey pair</td><td class="paper">warnaar_50_years_baileys_lemma</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Bailey pair</td><td class="rel">defined as</td><td><span class="wlink" data-page="rr">$q$-series</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>Bailey pair</td><td class="rel">defined as</td><td>$q$-hypergeometric series</td><td class="paper">warnaar_positivity_preserving_q_binomial</td></tr>
+  <tr><td>Bailey pair</td><td class="rel">uses</td><td><span class="wlink" data-page="jacobi">Jacobi triple product</span></td><td class="paper">mclaughlin_sills_zimmer_RR_slater_survey</td></tr>
+  <tr><td>Bailey pair</td><td class="rel">instance of</td><td>Type I / Type II</td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
+  <tr><td>conjugate Bailey pair</td><td class="rel">specializes to</td><td>Bailey pair</td><td class="paper">warnaar_50_years_baileys_lemma</td></tr>
+  <tr><td>Bailey chain</td><td class="rel">generalizes</td><td>Bailey pair</td><td class="paper">gessel_krattenthaler_1997</td></tr>
+  <tr><td>$q$-Saalschütz sum</td><td class="rel">applies to</td><td>Bailey pair</td><td class="paper">warnaar_50_years_baileys_lemma</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — Warnaar, <em>50 Years of Bailey's lemma</em> (survey of Bailey pairs and their applications)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree</em> (higher-rank Bailey pairs)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em> (Type I/II Bailey pairs)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0302320" target="_blank">arXiv:math/0302320</a> — Warnaar, <em>Positivity-preserving $q$-binomials</em> (Bailey pairs as $q$-hypergeometric series)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater survey</em> (Bailey pairs and Jacobi triple product)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9511218" target="_blank">arXiv:math/9511218</a> — Gessel, Krattenthaler, <em>Cylindric partitions</em> (Bailey chain generalization)</li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — Warnaar, <em>50 Years of Bailey's lemma</em> (survey of Bailey pairs and their applications)</li>
+  <li>Warnaar, <em>The $A_2$ Bailey tree</em> (higher-rank Bailey pairs)</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em> (Type I/II Bailey pairs)</li>
+  <li>Warnaar, <em>Positivity-preserving $q$-binomials</em> (Bailey pairs as $q$-hypergeometric series)</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater survey</em> (Bailey pairs and Jacobi triple product)</li>
+  <li>Gessel, Krattenthaler, <em>Cylindric partitions</em> (Bailey chain generalization)</li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: BAILEY LATTICE ════════════ -->
 <div class="page" id="page-bailey-lattice">
-  <h1>Bailey Lattice</h1>
-  <p class="subtitle">The iterative structure underlying Bailey's lemma</p>
+ <h1>Bailey Lattice</h1>
+ <p class="subtitle">The iterative structure underlying Bailey's lemma</p>
 
-  <h2>Overview</h2>
-  <p>
-    The Bailey lattice (Andrews-Schilling-Warnaar, 1999) organizes the iterative application
-    of Bailey's lemma into a lattice structure. Starting from a single
-    <span class="wlink" data-page="bailey-pair">Bailey pair</span>, one obtains an infinite
-    family of identities by repeated application.
-  </p>
-  <p>
-    The <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span> extends this lattice
-    to the $\mathfrak{sl}_3$ root system.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The Bailey lattice (Andrews-Schilling-Warnaar, 1999) organizes the iterative application
+  of Bailey's lemma into a lattice structure. Starting from a single
+  <span class="wlink" data-page="bailey-pair">Bailey pair</span>, one obtains an infinite
+  family of identities by repeated application.
+ </p>
+ <p>
+  The <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span> extends this lattice
+  to the $\mathfrak{sl}_3$ root system.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td><span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span></td><td class="rel">extends</td><td>Bailey lattice</td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
-    <tr><td>Bailey lattice</td><td class="rel">extends</td><td>Theorem 3.1</td><td class="paper">shareshian-wachs</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td><span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span></td><td class="rel">extends</td><td>Bailey lattice</td><td class="paper">andrews-schilling-warnaar-1999</td></tr>
+  <tr><td>Bailey lattice</td><td class="rel">extends</td><td>Theorem 3.1</td><td class="paper">shareshian-wachs</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma and Rogers-Ramanujan-type identities</em> (defines the Bailey lattice)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9204236" target="_blank">arXiv:math/9204236</a> — Milne, Lilly, <em>The $A_l$ and $C_l$ Bailey transform and lemma</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma and Rogers-Ramanujan-type identities</em> (defines the Bailey lattice)</li>
+  <li>Milne, Lilly, <em>The $A_l$ and $C_l$ Bailey transform and lemma</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: ANDREWS-GORDON ════════════ -->
 <div class="page" id="page-andrews-gordon">
-  <h1>Andrews-Gordon Identities</h1>
-  <p class="subtitle">The family of identities that Conjecture 2.7 generalizes</p>
+ <h1>Andrews-Gordon Identities</h1>
+ <p class="subtitle">The family of identities that Conjecture 2.7 generalizes</p>
 
-  <h2>The Identity</h2>
-  <p>The Andrews-Gordon identity (generalizing <span class="wlink" data-page="rr">Rogers-Ramanujan</span>):</p>
-  $$\sum_{n_1 \geq \cdots \geq n_{k-1} \geq 0}
-    \frac{q^{N_1^2 + \cdots + N_{k-1}^2 + N_i + \cdots + N_{k-1}}}{(q)_{n_1 - n_2} \cdots (q)_{n_{k-2} - n_{k-1}} (q)_{n_{k-1}}}
-    = \prod_{\substack{n=1 \\ n \not\equiv 0, \pm i \pmod{2k+1}}}^{\infty} \frac{1}{1 - q^n}$$
-  <p>where $N_j = n_j + \cdots + n_{k-1}$. The $A_2$ generalization replaces these with double sums over the $A_2$ weight lattice.</p>
+ <h2>The Identity</h2>
+ <p>The Andrews-Gordon identity (generalizing <span class="wlink" data-page="rr">Rogers-Ramanujan</span>):</p>
+ $$\sum_{n_1 \geq \cdots \geq n_{k-1} \geq 0}
+  \frac{q^{N_1^2 + \cdots + N_{k-1}^2 + N_i + \cdots + N_{k-1}}}{(q)_{n_1 - n_2} \cdots (q)_{n_{k-2} - n_{k-1}} (q)_{n_{k-1}}}
+  = \prod_{\substack{n=1 \\ n \not\equiv 0, \pm i \pmod{2k+1}}}^{\infty} \frac{1}{1 - q^n}$$
+ <p>where $N_j = n_j + \cdots + n_{k-1}$. The $A_2$ generalization replaces these with double sums over the $A_2$ weight lattice.</p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Andrews-Gordon</td><td class="rel">generalizes</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">extends</td><td>Andrews-Gordon</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="rel">uses</td><td>Andrews-Gordon</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-    <tr><td>Gordon's theorem</td><td class="rel">proved by</td><td>Theorem 2.2</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Andrews-Gordon</td><td class="rel">generalizes</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">extends</td><td>Andrews-Gordon</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="rel">uses</td><td>Andrews-Gordon</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+  <tr><td>Gordon's theorem</td><td class="rel">proved by</td><td>Theorem 2.2</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (Theorem 1.1 extends, Theorem 2.2 proves Gordon's theorem)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (Theorem 1.1 extends, Theorem 2.2 proves Gordon's theorem)</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — Andrews, Schilling, Warnaar, <em>An $A_2$ Bailey lemma</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: KANADE-RUSSELL ════════════ -->
 <div class="page" id="page-kanade-russell">
-  <h1>Kanade–Russell Conjecture</h1>
-  <p class="subtitle">Open conjectures proved via the $A_2$ Bailey tree</p>
+ <h1>Kanade–Russell Conjecture</h1>
+ <p class="subtitle">Open conjectures proved via the $A_2$ Bailey tree</p>
 
-  <h2>Overview</h2>
-  <p>
-    The Kanade–Russell conjectures are a family of partition-theoretic identities
-    discovered computationally. Warnaar's $A_2$ Bailey tree proves several of these
-    (Theorem 1.2), demonstrating the power of the higher-rank Bailey machinery.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The Kanade–Russell conjectures are a family of partition-theoretic identities
+  discovered computationally. Warnaar's $A_2$ Bailey tree proves several of these
+  (Theorem 1.2), demonstrating the power of the higher-rank Bailey machinery.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Theorem 1.2</td><td class="rel">proves</td><td>Kanade–Russell conjecture</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td><span class="wlink" data-page="bailey">$A_2$ Bailey tree</span></td><td class="rel">extends</td><td>Kanade–Russell conjecture</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>Kanade–Russell</td><td class="rel">about</td><td>ASW identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Theorem 1.2</td><td class="rel">proves</td><td>Kanade–Russell conjecture</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td><span class="wlink" data-page="bailey">$A_2$ Bailey tree</span></td><td class="rel">extends</td><td>Kanade–Russell conjecture</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>Kanade–Russell</td><td class="rel">about</td><td>ASW identities</td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree and Kanade-Russell conjectures</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Warnaar, <em>The $A_2$ Bailey tree and Kanade-Russell conjectures</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: THETA ════════════ -->
 <div class="page" id="page-theta">
-  <h1>Theta Functions</h1>
-  <p class="subtitle">The analytic backbone connecting modular forms to $q$-series</p>
+ <h1>Theta Functions</h1>
+ <p class="subtitle">The analytic backbone connecting modular forms to $q$-series</p>
 
-  <h2>Overview</h2>
-  <p>Jacobi's theta function:</p>
-  $$\theta(z; q) = \sum_{n=-\infty}^{\infty} q^{n^2} z^n = \prod_{n=1}^{\infty}(1-q^{2n})(1+zq^{2n-1})(1+z^{-1}q^{2n-1})$$
-  <p>
-    Partial theta functions (where the sum runs over $n \geq 0$ only) appear in Warnaar's
-    work on positivity. They lack the modular properties of full theta functions, which
-    makes positivity questions harder.
-  </p>
+ <h2>Overview</h2>
+ <p>Jacobi's theta function:</p>
+ $$\theta(z; q) = \sum_{n=-\infty}^{\infty} q^{n^2} z^n = \prod_{n=1}^{\infty}(1-q^{2n})(1+zq^{2n-1})(1+z^{-1}q^{2n-1})$$
+ <p>
+  Partial theta functions (where the sum runs over $n \geq 0$ only) appear in Warnaar's
+  work on positivity. They lack the modular properties of full theta functions, which
+  makes positivity questions harder.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Theta function</td><td class="rel">specializes to</td><td>Partial theta function</td><td class="paper">warnaar_partial_theta_functions</td></tr>
-    <tr><td>Theta function</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Theta function</td><td class="rel">specializes to</td><td>Partial theta function</td><td class="paper">warnaar_partial_theta_functions</td></tr>
+  <tr><td>Theta function</td><td class="rel">related to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0105002" target="_blank">arXiv:math/0105002</a> — Warnaar, <em>Partial theta functions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Warnaar, <em>Partial theta functions</em></li>
+  <li>Warnaar, <em>The $A_2$ Bailey tree</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: JACOBI ════════════ -->
 <div class="page" id="page-jacobi">
-  <h1>Jacobi Triple Product</h1>
-  <p class="subtitle">The fundamental product-sum identity</p>
+ <h1>Jacobi Triple Product</h1>
+ <p class="subtitle">The fundamental product-sum identity</p>
 
-  <h2>The Identity</h2>
-  $$\sum_{n=-\infty}^{\infty} z^n q^{n^2} = \prod_{n=1}^{\infty}(1-q^{2n})(1+zq^{2n-1})(1+z^{-1}q^{2n-1})$$
+ <h2>The Identity</h2>
+ $$\sum_{n=-\infty}^{\infty} z^n q^{n^2} = \prod_{n=1}^{\infty}(1-q^{2n})(1+zq^{2n-1})(1+z^{-1}q^{2n-1})$$
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Jacobi triple product</td><td class="rel">extends/implies</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
-    <tr><td>quintuple product identity</td><td class="rel">extends</td><td>Jacobi triple product</td><td class="paper">mclaughlin_sills_zimmer_RR_slater</td></tr>
-    <tr><td><span class="wlink" data-page="bailey-pair">Bailey pair</span></td><td class="rel">uses</td><td>Jacobi triple product</td><td class="paper">corteel_dousse_uncu_2019</td></tr>
-    <tr><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="rel">extends</td><td>Jacobi triple product</td><td class="paper">gessel_krattenthaler_1997</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Jacobi triple product</td><td class="rel">extends/implies</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">warnaar_A2_bailey_tree</td></tr>
+  <tr><td>quintuple product identity</td><td class="rel">extends</td><td>Jacobi triple product</td><td class="paper">mclaughlin_sills_zimmer_RR_slater</td></tr>
+  <tr><td><span class="wlink" data-page="bailey-pair">Bailey pair</span></td><td class="rel">uses</td><td>Jacobi triple product</td><td class="paper">corteel_dousse_uncu_2019</td></tr>
+  <tr><td><span class="wlink" data-page="bailey-pair">Bailey lemma</span></td><td class="rel">extends</td><td>Jacobi triple product</td><td class="paper">gessel_krattenthaler_1997</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — Warnaar, <em>The $A_2$ Bailey tree</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater survey</em> (quintuple product identity)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a> — Corteel, Dousse, Uncu, <em>Cylindric partitions and $A_2$ RR</em></li>
-    <li>Gessel, Krattenthaler, <em>Cylindric partitions</em>, Trans. AMS 349 (1997)</li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Warnaar, <em>The $A_2$ Bailey tree</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — McLaughlin, Sills, Zimmer, <em>Rogers-Ramanujan-Slater survey</em> (quintuple product identity)</li>
+  <li>Corteel, Dousse, Uncu, <em>Cylindric partitions and $A_2$ RR</em></li>
+  <li>Gessel, Krattenthaler, <em>Cylindric partitions</em>, Trans. AMS 349 (1997)</li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: CONSTANT TERM ════════════ -->
 <div class="page" id="page-constant-term">
-  <h1>Constant Term Method</h1>
-  <p class="subtitle">Extract identities from Laurent series</p>
+ <h1>Constant Term Method</h1>
+ <p class="subtitle">Extract identities from Laurent series</p>
 
-  <h2>Overview</h2>
-  <p>
-    The constant term method extracts the coefficient of $z^0$ in a Laurent series
-    to produce $q$-series identities. It provides alternative proofs of
-    <span class="wlink" data-page="rr">Rogers-Ramanujan</span> identities and can
-    sometimes reveal positivity structure.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The constant term method extracts the coefficient of $z^0$ in a Laurent series
+  to produce $q$-series identities. It provides alternative proofs of
+  <span class="wlink" data-page="rr">Rogers-Ramanujan</span> identities and can
+  sometimes reveal positivity structure.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Constant term method</td><td class="rel">applies to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">new_old_proof_RR_identities</td></tr>
-    <tr><td>$_1\psi_1$-summation</td><td class="rel">uses</td><td>Constant term method</td><td class="paper">new_old_proof_RR_identities</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Constant term method</td><td class="rel">applies to</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">new_old_proof_RR_identities</td></tr>
+  <tr><td>$_1\psi_1$-summation</td><td class="rel">uses</td><td>Constant term method</td><td class="paper">new_old_proof_RR_identities</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2211.14717" target="_blank">arXiv:2211.14717</a> — Sills, <em>Derivation of identities of the Rogers-Ramanujan type by the method of constant terms</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Rosengren, <em>A new (but very nearly old) proof of the Rogers-Ramanujan identities</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: LR COEFFICIENTS ════════════ -->
 <div class="page" id="page-lr-coefficients">
-  <h1>Littlewood-Richardson Coefficients</h1>
-  <p class="subtitle">Structure constants for Schur function multiplication</p>
+ <h1>Littlewood-Richardson Coefficients</h1>
+ <p class="subtitle">Structure constants for Schur function multiplication</p>
 
-  <h2>Overview</h2>
-  <p>The Littlewood-Richardson coefficients $c_{\mu\nu}^{\lambda}$ appear in:</p>
-  $$s_\mu \cdot s_\nu = \sum_\lambda c_{\mu\nu}^{\lambda}\, s_\lambda$$
-  <p>
-    They are non-negative integers (countable by LR tableaux). Their appearance
-    in Warnaar's Theorem 1.1 is significant — it means the $A_2$ Andrews-Gordon
-    identities have built-in representation-theoretic structure.
-  </p>
+ <h2>Overview</h2>
+ <p>The Littlewood-Richardson coefficients $c_{\mu\nu}^{\lambda}$ appear in:</p>
+ $$s_\mu \cdot s_\nu = \sum_\lambda c_{\mu\nu}^{\lambda}\, s_\lambda$$
+ <p>
+  They are non-negative integers (countable by LR tableaux). Their appearance
+  in Warnaar's Theorem 1.1 is significant — it means the $A_2$ Andrews-Gordon
+  identities have built-in representation-theoretic structure.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">uses</td><td>LR coefficients</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">uses</td><td>LR coefficients</td><td class="paper">warnaar_2021_A2_andrews_gordon</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (Theorem 1.1 uses LR coefficients)</li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (Theorem 1.1 uses LR coefficients)</li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: SCHUR POSITIVITY ════════════ -->
 <div class="page" id="page-schur-positivity">
-  <h1>Schur Positivity</h1>
-  <p class="subtitle">When a symmetric function has non-negative Schur coefficients</p>
+ <h1>Schur Positivity</h1>
+ <p class="subtitle">When a symmetric function has non-negative Schur coefficients</p>
 
-  <h2>Overview</h2>
-  <p>
-    A symmetric function $f$ is <strong>Schur-positive</strong> if $f = \sum_\lambda a_\lambda s_\lambda$
-    with all $a_\lambda \geq 0$. This is a strong form of positivity — it implies that $f$ arises
-    as the character of some representation.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  A symmetric function $f$ is <strong>Schur-positive</strong> if $f = \sum_\lambda a_\lambda s_\lambda$
+  with all $a_\lambda \geq 0$. This is a strong form of positivity — it implies that $f$ arises
+  as the character of some representation.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Schur positivity</td><td class="rel">implies</td><td><span class="wlink" data-page="llt">LLT polynomial</span></td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Schur positivity</td><td class="rel">implies</td><td><span class="wlink" data-page="llt">LLT polynomial</span></td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — Alexandersson, Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — Alexandersson, Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: LLT ════════════ -->
 <div class="page" id="page-llt">
-  <h1>LLT Polynomials</h1>
-  <p class="subtitle">Lascoux-Leclerc-Thibon polynomials — known to be Schur-positive</p>
+ <h1>LLT Polynomials</h1>
+ <p class="subtitle">Lascoux-Leclerc-Thibon polynomials — known to be Schur-positive</p>
 
-  <h2>Overview</h2>
-  <p>
-    LLT polynomials are a family of symmetric functions introduced by Lascoux, Leclerc,
-    and Thibon. They are indexed by tuples of skew shapes and are defined via ribbon tableaux.
-    Their <span class="wlink" data-page="schur-positivity">Schur positivity</span> was proved
-    by Grojnowski and Haiman using Kazhdan-Lusztig theory.
-  </p>
-  <p>
-    Assaf's dual equivalence graphs provide a combinatorial framework for
-    understanding LLT Schur positivity via diagonal inversions and descents.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  LLT polynomials are a family of symmetric functions introduced by Lascoux, Leclerc,
+  and Thibon. They are indexed by tuples of skew shapes and are defined via ribbon tableaux.
+  Their <span class="wlink" data-page="schur-positivity">Schur positivity</span> was proved
+  by Grojnowski and Haiman using Kazhdan-Lusztig theory.
+ </p>
+ <p>
+  Assaf's dual equivalence graphs provide a combinatorial framework for
+  understanding LLT Schur positivity via diagonal inversions and descents.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>LLT polynomial</td><td class="rel">defined as</td><td>diagonal inversion</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
-    <tr><td>LLT polynomial</td><td class="rel">defined as</td><td>diagonal descent</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
-    <tr><td><span class="wlink" data-page="schur-positivity">Schur positivity</span></td><td class="rel">implies</td><td>LLT polynomial</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>LLT polynomial</td><td class="rel">defined as</td><td>diagonal inversion</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
+  <tr><td>LLT polynomial</td><td class="rel">defined as</td><td>diagonal descent</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
+  <tr><td><span class="wlink" data-page="schur-positivity">Schur positivity</span></td><td class="rel">implies</td><td>LLT polynomial</td><td class="paper">assaf-dual-equivalence-graphs</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: HARD HEXAGON ════════════ -->
 <div class="page" id="page-hard-hexagon">
-  <h1>Baxter's Hard Hexagon Model</h1>
-  <p class="subtitle">Statistical mechanics meets partition identities</p>
+ <h1>Baxter's Hard Hexagon Model</h1>
+ <p class="subtitle">Statistical mechanics meets partition identities</p>
 
-  <h2>Overview</h2>
-  <p>
-    Baxter's hard hexagon model is a solvable lattice model in statistical mechanics.
-    Its partition function involves <span class="wlink" data-page="rr">Rogers-Ramanujan</span>-type
-    products, providing a physical interpretation of these $q$-series identities.
-    The corner transfer matrix method connects to modular structure.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  Baxter's hard hexagon model is a solvable lattice model in statistical mechanics.
+  Its partition function involves <span class="wlink" data-page="rr">Rogers-Ramanujan</span>-type
+  products, providing a physical interpretation of these $q$-series identities.
+  The corner transfer matrix method connects to modular structure.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Hard hexagon model</td><td class="rel">uses</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">RR_identities_statistical_mechanics</td></tr>
-    <tr><td>corner transfer matrix</td><td class="rel">defines</td><td>Hard hexagon model</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
-    <tr><td>Hard hexagon model</td><td class="rel">instance of</td><td>Regime II</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Hard hexagon model</td><td class="rel">uses</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">RR_identities_statistical_mechanics</td></tr>
+  <tr><td>corner transfer matrix</td><td class="rel">defines</td><td>Hard hexagon model</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
+  <tr><td>Hard hexagon model</td><td class="rel">instance of</td><td>Regime II</td><td class="paper">RR_identities_statistical_mechanics</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li>Berkovich, McCoy, <em>Rogers-Ramanujan identities: a century of progress from mathematics to physics</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Berkovich, McCoy, <em>Rogers-Ramanujan identities: a century of progress from mathematics to physics</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: LEVEL-RANK ════════════ -->
 <div class="page" id="page-level-rank">
-  <h1>Level-Rank Duality</h1>
-  <p class="subtitle">Swapping level and rank in affine Lie algebra representations</p>
+ <h1>Level-Rank Duality</h1>
+ <p class="subtitle">Swapping level and rank in affine Lie algebra representations</p>
 
-  <h2>Overview</h2>
-  <p>
-    Level-rank duality exchanges the level $\ell$ and rank $n$ in representations of
-    affine Lie algebras $\widehat{\mathfrak{sl}}_n$ at level $\ell$. For the $A_2$
-    Andrews-Gordon identities, this duality connects identities at different parameter values,
-    and Theorem 1.1 implies level-rank duality as a consequence.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  Level-rank duality exchanges the level $\ell$ and rank $n$ in representations of
+  affine Lie algebras $\widehat{\mathfrak{sl}}_n$ at level $\ell$. For the $A_2$
+  Andrews-Gordon identities, this duality connects identities at different parameter values,
+  and Theorem 1.1 implies level-rank duality as a consequence.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Theorem 1.1</td><td class="rel">implies</td><td>Level-rank duality</td><td class="paper">warnaar_RR_identities</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Theorem 1.1</td><td class="rel">implies</td><td>Level-rank duality</td><td class="paper">warnaar_RR_identities</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1309.5216" target="_blank">arXiv:1309.5216</a> — Warnaar, <em>The $A_{2n}^{(2)}$ Rogers-Ramanujan identities</em></li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Warnaar, <em>The $A_{2n}^{(2)}$ Rogers-Ramanujan identities</em></li>
+ </ul>
 </div>
 
 <!-- ════════════ CONCEPT: INVOLUTION ════════════ -->
 <div class="page" id="page-involution">
-  <h1>Involution Principle</h1>
-  <p class="subtitle">Garsia-Milne involution for bijective proofs</p>
+ <h1>Involution Principle</h1>
+ <p class="subtitle">Garsia-Milne involution for bijective proofs</p>
 
-  <h2>Overview</h2>
-  <p>
-    The Garsia-Milne involution principle provides a general method for converting
-    analytic proofs of partition identities into bijective (combinatorial) ones.
-    Applied to <span class="wlink" data-page="rr">Rogers-Ramanujan</span>, it produces
-    explicit bijections between the partition sets on each side of the identity.
-  </p>
-  <p>
-    For Conjecture 2.7, the involution principle could potentially convert the
-    <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span> proof into a
-    combinatorial proof of positivity.
-  </p>
+ <h2>Overview</h2>
+ <p>
+  The Garsia-Milne involution principle provides a general method for converting
+  analytic proofs of partition identities into bijective (combinatorial) ones.
+  Applied to <span class="wlink" data-page="rr">Rogers-Ramanujan</span>, it produces
+  explicit bijections between the partition sets on each side of the identity.
+ </p>
+ <p>
+  For Conjecture 2.7, the involution principle could potentially convert the
+  <span class="wlink" data-page="bailey">$A_2$ Bailey lemma</span> proof into a
+  combinatorial proof of positivity.
+ </p>
 
-  <h2>Graph Connections</h2>
-  <table class="edges">
-    <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
-    <tr><td>Involution principle</td><td class="rel">uses</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">zeilberger_garsia_milne_involution</td></tr>
-  </table>
+ <h2>Graph Connections</h2>
+ <table class="edges">
+  <tr><th>Source</th><th>Relation</th><th>Target</th><th>Paper</th></tr>
+  <tr><td>Involution principle</td><td class="rel">uses</td><td><span class="wlink" data-page="rr">Rogers-Ramanujan</span></td><td class="paper">zeilberger_garsia_milne_involution</td></tr>
+ </table>
 
-  <h2>Key References</h2>
-  <ul>
-    <li>Zeilberger, <em>A proof of the $G_1$ case of Macdonald's root system-Dyson conjecture</em> (Garsia-Milne involution principle)</li>
-  </ul>
+ <h2>Key References</h2>
+ <ul>
+  <li>Zeilberger, <em>A proof of the $G_1$ case of Macdonald's root system-Dyson conjecture</em> (Garsia-Milne involution principle)</li>
+ </ul>
 </div>
 
 <!-- ════════════ BIBLIOGRAPHY ════════════ -->
 <div class="page" id="page-papers">
-  <h1>Bibliography</h1>
-  <p class="subtitle">Papers referenced in the knowledge graph, grouped by approach. ArXiv links open in a new tab.</p>
+ <h1>Bibliography</h1>
+ <p class="subtitle">Papers referenced in the knowledge graph, grouped by approach. ArXiv links open in a new tab.</p>
 
-  <h2><span class="tag t1">①</span> $A_2$ Bailey Lemma Papers</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — S.O. Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (the source of Conjecture 2.7)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2303.09069" target="_blank">arXiv:2303.09069</a> — S.O. Warnaar, <em>The $A_2$ Bailey tree and Kanade–Russell conjectures</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — G.E. Andrews, A. Schilling, S.O. Warnaar, <em>An $A_2$ Bailey lemma and Rogers-Ramanujan-type identities</em> (1999)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — S.O. Warnaar, <em>50 Years of Bailey's lemma</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/q-alg/9601012" target="_blank">arXiv:q-alg/9601012</a> — S.O. Warnaar, <em>The Bailey lemma and Kostka polynomials</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/9204236" target="_blank">arXiv:math/9204236</a> — S.C. Milne, G.M. Lilly, <em>The $A_l$ and $C_l$ Bailey transform and lemma</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0207030" target="_blank">arXiv:math/0207030</a> — S.O. Warnaar, <em>The Bailey lemma and Kostka polynomials</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0105002" target="_blank">arXiv:math/0105002</a> — S.O. Warnaar, <em>Partial theta functions</em></li>
-  </ul>
+ <h2><span class="tag t1">①</span> $A_2$ Bailey Lemma Papers</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2111.07550" target="_blank">arXiv:2111.07550</a> — S.O. Warnaar, <em>$A_2$ Andrews-Gordon identities</em> (the source of Conjecture 2.7)</li>
+  <li>S.O. Warnaar, <em>The $A_2$ Bailey tree and Kanade–Russell conjectures</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/9807125" target="_blank">arXiv:math/9807125</a> — G.E. Andrews, A. Schilling, S.O. Warnaar, <em>An $A_2$ Bailey lemma and Rogers-Ramanujan-type identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/0910.2062" target="_blank">arXiv:0910.2062</a> — S.O. Warnaar, <em>50 Years of Bailey's lemma</em></li>
+  <li>S.O. Warnaar, <em>Supernomial coefficients, Bailey's lemma, and RR-type identities</em></li>
+  <li>S.C. Milne, G.M. Lilly, <em>The $A_l$ and $C_l$ Bailey transform and lemma</em></li>
+  <li>S.O. Warnaar, <em>Rogers-Ramanujan identities</em></li>
+  <li>S.O. Warnaar, <em>Partial theta functions</em></li>
+  <li>A. Berkovich, S.O. Warnaar, <em>Positivity-preserving transformations for $q$-binomial coefficients</em></li>
+ </ul>
 
-  <h2><span class="tag t2">②</span> Cylindric Partition Papers</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a> — S. Corteel, J. Dousse, A.K. Uncu, <em>Weighted cylindric partitions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a> — C. Korff, <em>Cylindric versions of specialised Macdonald functions and a deformed Verlinde algebra</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2507.02435" target="_blank">arXiv:2507.02435</a> — B. Barsakci, <em>Weighted words and cylindric partitions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2110.12629" target="_blank">arXiv:2110.12629</a> — R.S. Langer, <em>Cylindric plane partitions</em> (PhD thesis)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2205.04811" target="_blank">arXiv:2205.04811</a> — <em>$A_2$ Rogers-Ramanujan bipartitions at level 3</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2011.12828" target="_blank">arXiv:2011.12828</a> — S. Corteel, J. Dousse, A.K. Uncu, <em>Cylindric partitions and some new $A_2$ Rogers-Ramanujan identities</em> (2019)</li>
-  </ul>
+ <h2><span class="tag t2">②</span> Cylindric Partition Papers</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2201.03047" target="_blank">arXiv:2201.03047</a> — W. Bridges, A.K. Uncu, <em>Weighted cylindric partitions</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1110.6356" target="_blank">arXiv:1110.6356</a> — C. Korff, <em>Cylindric versions of specialised Macdonald functions</em></li>
+  <li>B. Barsakci, <em>Weighted words and cylindric partitions</em></li>
+  <li>PhD thesis on cylindric plane partitions</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2205.04811" target="_blank">arXiv:2205.04811</a> — S. Tsuchioka, <em>$A_2$ Rogers-Ramanujan bipartition identities of level 3</em></li>
+  <li>S. Corteel, J. Dousse, A.K. Uncu, <em>Cylindric partitions and some new $A_2$ Rogers-Ramanujan identities</em></li>
+ </ul>
 
-  <h2><span class="tag t3">③</span> Hall-Littlewood &amp; Schur Positivity Papers</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a> — S.O. Warnaar, <em>Hall-Littlewood functions and the $A_2$ Rogers-Ramanujan identities</em> (2006)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — S.H. Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.02755" target="_blank">arXiv:1506.02755</a> — E.M. Rains, S.O. Warnaar, <em>Bounded Littlewood identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — P. Alexandersson, R. Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0609249" target="_blank">arXiv:math/0609249</a> — T. Lam, P. Pylyavskyy, <em>$P$-partition products and fundamental quasi-symmetric function positivity</em></li>
-  </ul>
+ <h2><span class="tag t3">③</span> Hall-Littlewood &amp; Schur Positivity Papers</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/math/0410592" target="_blank">arXiv:math/0410592</a> — S.O. Warnaar, <em>Hall-Littlewood functions and the $A_2$ Rogers-Ramanujan identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1506.03798" target="_blank">arXiv:1506.03798</a> — S.H. Assaf, <em>Dual equivalence graphs and a combinatorial proof of LLT and Macdonald positivity</em></li>
+  <li>E.M. Rains, S.O. Warnaar, <em>Bounded Littlewood identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1807.02460" target="_blank">arXiv:1807.02460</a> — P. Alexandersson, R. Sulzgruber, <em>$P$-partitions and $p$-positivity</em></li>
+  <li>T. Lam, P. Pylyavskyy, <em>$P$-partition products and fundamental quasi-symmetric function positivity</em></li>
+ </ul>
 
-  <h2>General / Cross-cutting</h2>
-  <ul>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — J. McLaughlin, A.V. Sills, P. Zimmer, <em>Rogers-Ramanujan-Slater type identities</em> (survey)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1506.03508" target="_blank">arXiv:1506.03508</a> — I. Gessel, <em>A historical survey of $P$-partitions</em></li>
-    <li>I. Gessel, C. Krattenthaler, <em>Cylindric partitions</em>, Trans. AMS 349 (1997), 429–479</li>
-    <li>A. Berkovich, B.M. McCoy, <em>Rogers-Ramanujan identities: a century of progress from mathematics to physics</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/2211.14717" target="_blank">arXiv:2211.14717</a> — A.V. Sills, <em>Derivation of identities of the Rogers-Ramanujan type by the method of constant terms</em></li>
-    <li>D. Zeilberger, <em>A proof of the $G_1$ case of Macdonald's root system-Dyson conjecture</em> (Garsia-Milne involution)</li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0411072" target="_blank">arXiv:math/0411072</a> — C. Boulet, <em>A four-parameter partition identity related to $R(\tau)$</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0105002" target="_blank">arXiv:math/0105002</a> — S.O. Warnaar, <em>Partial theta functions</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0102113" target="_blank">arXiv:math/0102113</a> — G. Hatayama et al., <em>Paths, crystals and fermionic formulae</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/math/0105017" target="_blank">arXiv:math/0105017</a> — M. Okado, A. Schilling, M. Shimozono, <em>Virtual crystals and fermionic formulas</em></li>
-    <li>A. Dixit, <em>Multifaceted Rogers-Ramanujan functions</em></li>
-    <li>H.S. Wilf, <em>Lectures on integer partitions</em> (lecture notes)</li>
-    <li>G. Gasper, <em>Lecture notes on $q$-series</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1405.4629" target="_blank">arXiv:1405.4629</a> — J. Shareshian, M.L. Wachs, <em>Chromatic quasisymmetric functions</em></li>
-    <li>A. Schilling, <em>Rogers-Ramanujan identities at $Y2K$</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1101.4950" target="_blank">arXiv:1101.4950</a> — C. Bruschek, H. Mourtada, J. Schepers, <em>Arc spaces and the Rogers-Ramanujan identities</em></li>
-    <li><a class="arxiv" href="https://arxiv.org/abs/1401.7718" target="_blank">arXiv:1401.7718</a> — M.J. Griffin, K. Ono, S.O. Warnaar, <em>A framework of Rogers-Ramanujan identities</em></li>
-  </ul>
+ <h2>General / Cross-cutting</h2>
+ <ul>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1901.00946" target="_blank">arXiv:1901.00946</a> — J. McLaughlin, A.V. Sills, P. Zimmer, <em>Rogers-Ramanujan-Slater type identities</em> (survey)</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1506.03508" target="_blank">arXiv:1506.03508</a> — I. Gessel, <em>A historical survey of $P$-partitions</em></li>
+  <li>I. Gessel, C. Krattenthaler, <em>Cylindric partitions</em>, Trans. AMS 349 (1997), 429–479</li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2405.08425" target="_blank">arXiv:2405.08425</a> — <em>Rogers-Ramanujan identities in statistical mechanics</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/2211.14717" target="_blank">arXiv:2211.14717</a> — A.V. Sills, <em>Derivation of RR-type identities by constant terms</em></li>
+  <li>D. Zeilberger, <em>Garsia-Milne involution principle</em></li>
+  <li>C. Boulet, <em>Combinatorial proof of Rogers-Ramanujan via Schur's identity</em></li>
+  <li>S.O. Warnaar, <em>Partial theta functions</em></li>
+  <li>G. Hatayama et al., <em>Paths, crystals and fermionic formulae</em></li>
+  <li>M. Okado, A. Schilling, M. Shimozono, <em>Virtual crystals and fermionic formulas</em></li>
+  <li>A. Dixit, <em>Multifaceted Rogers-Ramanujan functions</em></li>
+  <li>H.S. Wilf, <em>Lectures on integer partitions</em></li>
+  <li>G. Gasper, <em>Lecture notes on $q$-series</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1405.4629" target="_blank">arXiv:1405.4629</a> — J. Shareshian, M.L. Wachs, <em>Chromatic quasisymmetric functions</em></li>
+  <li>A. Schilling, <em>Rogers-Ramanujan identities at $Y2K$</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1101.4950" target="_blank">arXiv:1101.4950</a> — C. Bruschek, H. Mourtada, J. Schepers, <em>Arc spaces and the Rogers-Ramanujan identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1401.7718" target="_blank">arXiv:1401.7718</a> — M.J. Griffin, K. Ono, S.O. Warnaar, <em>A framework of Rogers-Ramanujan identities</em></li>
+  <li><a class="arxiv" href="https://arxiv.org/abs/1905.08343" target="_blank">arXiv:1905.08343</a> — S. Corteel, T. Welsh, <em>The $A_2$ Rogers-Ramanujan identities revisited</em></li>
+ </ul>
 </div>
 
 </main>
@@ -937,64 +939,66 @@
 
 <script>
 // ─── Paper → arXiv mapping ───
+// ArXiv IDs verified from source paper files (page 1 stamp or filename).
+// Papers without a verified ID show as plain text (no link).
 const PAPERS = {
-  "warnaar_2021_A2_andrews_gordon": { arxiv: "2111.07550", short: "Warnaar 2021" },
-  "warnaar_A2_bailey_tree": { arxiv: "2303.09069", short: "Warnaar 2023" },
-  "andrews-schilling-warnaar-1999": { arxiv: "math/9807125", short: "ASW 1999" },
-  "warnaar_50_years_baileys_lemma": { arxiv: "0910.2062", short: "Warnaar 2009" },
-  "warnaar_50_years_baileys_lemma_uq": { arxiv: "0910.2062", short: "Warnaar 2009" },
-  "warnaar_supernomial_bailey_RR": { arxiv: "q-alg/9601012", short: "Warnaar 1996" },
-  "milne-lilly-bailey-transform-9204236": { arxiv: "math/9204236", short: "Milne-Lilly 1992" },
-  "warnaar_RR_identities": { arxiv: "1309.5216", short: "Warnaar 2013" },
-  "warnaar_positivity_preserving_q_binomial": { arxiv: "math/0302320", short: "Berkovich-Warnaar 2003" },
-  "warnaar_partial_theta_functions": { arxiv: "math/0105002", short: "Warnaar 2001" },
-  "corteel_dousse_uncu_weighted_cylindric": { arxiv: "2011.12828", short: "CDU 2020" },
-  "korff_1110.6356": { arxiv: "1110.6356", short: "Korff 2011" },
-  "barsakci_weighted_words_cylindric": { arxiv: "2507.02435", short: "Barsakci 2025" },
-  "2021_phd_thesis_cpp": { arxiv: "2110.12629", short: "Langer 2021" },
-  "A2_RR_bipartition_level3": { arxiv: "2205.04811", short: "Tsuchioka 2022" },
-  "corteel_dousse_uncu_2019": { arxiv: "2011.12828", short: "CDU 2020" },
-  "warnaar_2006_hall_littlewood_A2": { arxiv: "math/0410592", short: "Warnaar 2004" },
-  "assaf-dual-equivalence-graphs-1506.03798": { arxiv: "1506.03798", short: "Assaf 2015" },
-  "assaf-dual-equivalence-graphs": { arxiv: "1506.03798", short: "Assaf 2015" },
-  "warnaar_rains_bounded_littlewood": { arxiv: "1506.02755", short: "Rains-Warnaar 2015" },
-  "alexandersson-sulzgruber-p-partitions-p-positivity-1807.02460": { arxiv: "1807.02460", short: "Alex.-Sulz. 2018" },
-  "lam-pylyavskyy-p-partition-products-0609249": { arxiv: "math/0609249", short: "Lam-Pyly. 2006" },
-  "mclaughlin_sills_zimmer_RR_slater_survey_v2": { arxiv: "1901.00946", short: "MSZ 2019" },
-  "mclaughlin_sills_zimmer_RR_slater_survey": { arxiv: "1901.00946", short: "MSZ 2019" },
-  "mclaughlin_sills_zimmer_RR_slater_identities": { arxiv: "1901.00946", short: "MSZ 2019" },
-  "mclaughlin_sills_zimmer_RR_slater": { arxiv: "1901.00946", short: "MSZ 2019" },
-  "gessel-historical-survey-p-partitions-1506.03508": { arxiv: "1506.03508", short: "Gessel 2015" },
-  "gessel_krattenthaler_1997": { arxiv: null, short: "Gessel-Kratt. 1997" },
-  "RR_identities_statistical_mechanics": { arxiv: null, short: "Berkovich-McCoy" },
-  "new_old_proof_RR_identities": { arxiv: "2211.14717", short: "Sills 2022" },
-  "zeilberger_garsia_milne_involution": { arxiv: null, short: "Zeilberger" },
-  "boulet_combinatorial_proof_RR_schur": { arxiv: "math/0411072", short: "Boulet-Pak 2004" },
-  "hatayama_et_al_0102113": { arxiv: "math/0102113", short: "Hatayama+ 2001" },
-  "okado_schilling_shimozono_0105017": { arxiv: "math/0105017", short: "OSS 2001" },
-  "dixit_multifaceted_RR_functions": { arxiv: null, short: "Dixit" },
-  "wilf_lectures_integer_partitions": { arxiv: null, short: "Wilf" },
-  "gasper_lecture_notes_q_series": { arxiv: null, short: "Gasper" },
-  "shareshian-wachs-chromatic-quasisymmetric-1405.4629": { arxiv: "1405.4629", short: "Shar.-Wachs 2014" },
-  "shareshian-wachs": { arxiv: "1405.4629", short: "Shar.-Wachs 2014" },
-  "schilling_RR_identities_Y2K": { arxiv: null, short: "Schilling 2000" },
-  "bruschek_mourtada_schepers_1101.4950": { arxiv: "1101.4950", short: "BMS 2011" },
-  "griffin-ono-warnaar-2016": { arxiv: "1401.7718", short: "GOW 2014" },
-  "corteel-welsh-2019": { arxiv: "2011.12828", short: "CDU 2020" },
-  "schilling_0704.2046": { arxiv: "0704.2046", short: "Schilling 2007" },
-  "schilling_okado_shimozono_0104268": { arxiv: "math/0104268", short: "SOS 2001" },
-  "nakayashiki_yamada_9512027": { arxiv: "hep-th/9512027", short: "Nak.-Yamada 1995" },
+ "warnaar_2021_A2_andrews_gordon": { arxiv: "2111.07550", short: "Warnaar 2021" },
+ "warnaar_A2_bailey_tree": { arxiv: null, short: "Warnaar (A₂ Bailey tree)" },
+ "andrews-schilling-warnaar-1999": { arxiv: "math/9807125", short: "ASW 1999" },
+ "warnaar_50_years_baileys_lemma": { arxiv: "0910.2062", short: "Warnaar 2009" },
+ "warnaar_50_years_baileys_lemma_uq": { arxiv: "0910.2062", short: "Warnaar 2009" },
+ "warnaar_supernomial_bailey_RR": { arxiv: null, short: "Warnaar (supernomial)" },
+ "milne-lilly-bailey-transform-9204236": { arxiv: null, short: "Milne-Lilly" },
+ "warnaar_RR_identities": { arxiv: null, short: "Warnaar (RR identities)" },
+ "warnaar_positivity_preserving_q_binomial": { arxiv: null, short: "Warnaar (positivity)" },
+ "warnaar_partial_theta_functions": { arxiv: null, short: "Warnaar (partial theta)" },
+ "corteel_dousse_uncu_weighted_cylindric": { arxiv: "2201.03047", short: "Bridges-Uncu 2022" },
+ "korff_1110.6356": { arxiv: "1110.6356", short: "Korff 2011" },
+ "barsakci_weighted_words_cylindric": { arxiv: null, short: "Barsakci (weighted words)" },
+ "2021_phd_thesis_cpp": { arxiv: null, short: "PhD thesis (cpp)" },
+ "A2_RR_bipartition_level3": { arxiv: "2205.04811", short: "Tsuchioka 2022" },
+ "corteel_dousse_uncu_2019": { arxiv: null, short: "Corteel-Dousse-Uncu" },
+ "warnaar_2006_hall_littlewood_A2": { arxiv: "math/0410592", short: "Warnaar 2004" },
+ "assaf-dual-equivalence-graphs-1506.03798": { arxiv: "1506.03798", short: "Assaf 2015" },
+ "assaf-dual-equivalence-graphs": { arxiv: "1506.03798", short: "Assaf 2015" },
+ "warnaar_rains_bounded_littlewood": { arxiv: null, short: "Rains-Warnaar" },
+ "alexandersson-sulzgruber-p-partitions-p-positivity-1807.02460": { arxiv: "1807.02460", short: "Alex.-Sulz. 2018" },
+ "lam-pylyavskyy-p-partition-products-0609249": { arxiv: null, short: "Lam-Pylyavskyy" },
+ "mclaughlin_sills_zimmer_RR_slater_survey_v2": { arxiv: "1901.00946", short: "MSZ 2019" },
+ "mclaughlin_sills_zimmer_RR_slater_survey": { arxiv: "1901.00946", short: "MSZ 2019" },
+ "mclaughlin_sills_zimmer_RR_slater_identities": { arxiv: "1901.00946", short: "MSZ 2019" },
+ "mclaughlin_sills_zimmer_RR_slater": { arxiv: "1901.00946", short: "MSZ 2019" },
+ "gessel-historical-survey-p-partitions-1506.03508": { arxiv: "1506.03508", short: "Gessel 2015" },
+ "gessel_krattenthaler_1997": { arxiv: null, short: "Gessel-Kratt. 1997" },
+ "RR_identities_statistical_mechanics": { arxiv: "2405.08425", short: "RR stat. mech." },
+ "new_old_proof_RR_identities": { arxiv: null, short: "New proof of RR" },
+ "zeilberger_garsia_milne_involution": { arxiv: null, short: "Zeilberger" },
+ "boulet_combinatorial_proof_RR_schur": { arxiv: null, short: "Boulet (RR-Schur)" },
+ "hatayama_et_al_0102113": { arxiv: null, short: "Hatayama+" },
+ "okado_schilling_shimozono_0105017": { arxiv: null, short: "Okado-Schilling-Shimozono" },
+ "dixit_multifaceted_RR_functions": { arxiv: null, short: "Dixit" },
+ "wilf_lectures_integer_partitions": { arxiv: null, short: "Wilf" },
+ "gasper_lecture_notes_q_series": { arxiv: null, short: "Gasper" },
+ "shareshian-wachs-chromatic-quasisymmetric-1405.4629": { arxiv: "1405.4629", short: "Shar.-Wachs 2014" },
+ "shareshian-wachs": { arxiv: "1405.4629", short: "Shar.-Wachs 2014" },
+ "schilling_RR_identities_Y2K": { arxiv: null, short: "Schilling 2000" },
+ "bruschek_mourtada_schepers_1101.4950": { arxiv: "1101.4950", short: "BMS 2011" },
+ "griffin-ono-warnaar-2016": { arxiv: "1401.7718", short: "GOW 2014" },
+ "corteel-welsh-2019": { arxiv: "1905.08343", short: "Corteel-Welsh 2019" },
+ "schilling_0704.2046": { arxiv: "0704.2046", short: "Schilling 2007" },
+ "schilling_okado_shimozono_0104268": { arxiv: null, short: "Schilling-Okado-Shimozono" },
+ "nakayashiki_yamada_9512027": { arxiv: null, short: "Nakayashiki-Yamada" },
 };
 
 // ─── Auto-link paper cells ───
 document.querySelectorAll('.edges .paper').forEach(cell => {
-  const key = cell.textContent.trim();
-  const info = PAPERS[key];
-  if (info && info.arxiv) {
-    cell.innerHTML = `<a href="https://arxiv.org/abs/${info.arxiv}" target="_blank">${info.short}</a>`;
-  } else if (info) {
-    cell.textContent = info.short;
-  }
+ const key = cell.textContent.trim;
+ const info = PAPERS[key];
+ if (info && info.arxiv) {
+  cell.innerHTML = `<a href="https://arxiv.org/abs/${info.arxiv}" target="_blank">${info.short}</a>`;
+ } else if (info) {
+  cell.textContent = info.short;
+ }
 });
 
 // ─── Wiki navigation ───
@@ -1002,38 +1006,38 @@ const links = document.querySelectorAll('[data-page]');
 const pages = document.querySelectorAll('.page');
 
 function navigate(pageId) {
-  pages.forEach(p => p.classList.remove('active'));
-  links.forEach(l => l.classList.remove('active'));
+ pages.forEach(p => p.classList.remove('active'));
+ links.forEach(l => l.classList.remove('active'));
 
-  const target = document.getElementById('page-' + pageId);
-  if (target) {
-    target.classList.add('active');
-    document.getElementById('content').scrollTop = 0;
-  }
+ const target = document.getElementById('page-' + pageId);
+ if (target) {
+  target.classList.add('active');
+  document.getElementById('content').scrollTop = 0;
+ }
 
-  // Highlight nav link
-  document.querySelectorAll(`nav [data-page="${pageId}"]`).forEach(l => l.classList.add('active'));
+ // Highlight nav link
+ document.querySelectorAll(`nav [data-page="${pageId}"]`).forEach(l => l.classList.add('active'));
 }
 
 links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    navigate(link.dataset.page);
-  });
+ link.addEventListener('click', e => {
+  e.preventDefault;
+  navigate(link.dataset.page);
+ });
 });
 
 // Support internal .wlink clicks (walk up the DOM to handle clicks on
 // child elements like KaTeX-rendered math inside a .wlink span)
 document.addEventListener('click', e => {
-  let el = e.target;
-  while (el && el !== document.body) {
-    if (el.classList && el.classList.contains('wlink') && el.dataset.page) {
-      e.preventDefault();
-      navigate(el.dataset.page);
-      return;
-    }
-    el = el.parentElement;
+ let el = e.target;
+ while (el && el !== document.body) {
+  if (el.classList && el.classList.contains('wlink') && el.dataset.page) {
+   e.preventDefault;
+   navigate(el.dataset.page);
+   return;
   }
+  el = el.parentElement;
+ }
 });
 </script>
 </body>
