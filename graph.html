@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Q-Series Knowledge Graph</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #eee; font-family: 'Menlo', monospace; overflow: hidden; }
+  svg { width: 100vw; height: 100vh; }
+  .node text { font-size: 10px; fill: #bbb; pointer-events: none; text-shadow: 0 0 5px #000, 0 0 3px #000; }
+  .node circle { cursor: pointer; }
+  #tooltip {
+    position: absolute; background: rgba(12,12,12,0.97); border: 1px solid #555;
+    padding: 14px 18px; border-radius: 8px; font-size: 12px; max-width: 450px;
+    display: none; line-height: 1.7; z-index: 100; max-height: 70vh; overflow-y: auto;
+  }
+  #tooltip::-webkit-scrollbar { width: 4px; }
+  #tooltip::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+  #tooltip .name { font-size: 15px; font-weight: bold; color: #fff; }
+  #tooltip .cat { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  #tooltip .paper { color: #4488ff; font-size: 11px; margin-top: 4px; }
+  #tooltip .desc { color: #999; margin-top: 6px; }
+  #tooltip .edges { margin-top: 10px; border-top: 1px solid #222; padding-top: 8px; }
+  #tooltip .edge-item { color: #888; font-size: 11px; margin: 3px 0; }
+  #tooltip .edge-rel { font-weight: bold; }
+  #tooltip .close { position: absolute; top: 8px; right: 12px; color: #666; cursor: pointer; font-size: 16px; }
+  #tooltip .close:hover { color: #fff; }
+  #controls {
+    position: absolute; top: 16px; left: 16px; background: rgba(10,10,10,0.96);
+    border: 1px solid #333; border-radius: 8px; padding: 14px 18px; font-size: 12px;
+    max-height: calc(100vh - 32px); overflow-y: auto; width: 230px; z-index: 50;
+  }
+  #controls::-webkit-scrollbar { width: 4px; }
+  #controls::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+  #controls h2 { font-size: 14px; margin-bottom: 4px; color: #fff; }
+  #controls .sub { font-size: 10px; color: #555; margin-bottom: 10px; }
+  .stat { color: #555; font-size: 11px; margin-bottom: 10px; }
+  #search { background: #111; border: 1px solid #333; color: #eee; padding: 7px 10px;
+    border-radius: 4px; width: 100%; font-family: inherit; font-size: 12px; }
+  #search:focus { outline: none; border-color: #6510F4; }
+  h3 { font-size: 10px; color: #555; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 1.5px; }
+  .filter-group label { display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 2px 0; color: #999; font-size: 11px; }
+  .filter-group label:hover { color: #fff; }
+  .filter-group input[type=checkbox] { accent-color: #6510F4; flex-shrink: 0; }
+  .count { color: #444; margin-left: auto; font-size: 10px; }
+  .btn-row { display: flex; gap: 6px; margin-bottom: 6px; }
+  .btn { background: #151515; border: 1px solid #333; color: #888; padding: 3px 8px;
+    border-radius: 3px; cursor: pointer; font-size: 10px; font-family: inherit; }
+  .btn:hover { color: #fff; border-color: #555; }
+  .legend-item { display: flex; align-items: center; gap: 6px; margin: 3px 0; font-size: 11px; color: #888; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .link-label { font-size: 9px; fill: #666; pointer-events: none; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+</style>
+</head>
+<body>
+<div id="controls">
+  <h2>Q-Series Knowledge Graph</h2>
+  <div class="sub">76 papers · math-aware extraction</div>
+  <div class="stat" id="stats"></div>
+  <input type="text" id="search" placeholder="Search... (click nodes for details)">
+  <h3>Node types</h3>
+  <div id="cat-legend"></div>
+  <h3>Edge types</h3>
+  <div class="btn-row">
+    <button class="btn" onclick="toggleEdges(true)">All</button>
+    <button class="btn" onclick="toggleEdges(false)">None</button>
+  </div>
+  <div id="edge-filters"></div>
+</div>
+<div id="tooltip"></div>
+<svg></svg>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const data = {"nodes": [{"id": "1381def4f47a5763b4d6e2844bd46e07", "name": "uq(g)", "description": "Quantized universal enveloping algebra associated with a Kac\u2013Moody Lie algebra g.", "category": "mathobject", "paper": "okado_schilling_shimozono_0105017", "distance": 2, "isCenter": false}, {"id": "bb84e0a129bb51968d7599029d53db91", "name": "eulerian quasisymmetric function", "description": "Functions that count combinatorial properties related to permutations, refined by major index and excedance.", "category": "mathobject", "paper": "shareshian-wachs-eulerian-qsym-0812.0764", "distance": 2, "isCenter": false}, {"id": "a39ebdf00d675702858417265e77fdf2", "name": "conjecture 1.1", "description": "A conjecture about the ASW identities for all dominant integral weights of the affine Lie algebra A(1)2. Open.", "category": "conjecture", "paper": "warnaar_A2_bailey_tree", "distance": 2, "isCenter": false}, {"id": "4572733693be51cb8e9a1f8f643ca448", "name": "corollary 1.3", "description": "The polynomial Amaj, exc, fix_n (q,t,r) equals (1 - tq) expq(rz) / (expq(ztq) - tq expq(z)). Proved.", "category": "corollary", "paper": "shareshian-wachs-eulerian-qsym-0812.0764", "distance": 2, "isCenter": false}, {"id": "a839562f804f5ed6b620f2baa36eb1a5", "name": "um(p,\u03c9)", "description": "The generating function for the counting of (P,\u03c9)-partitions with parts at most m.", "category": "formula", "paper": "gessel-historical-survey-p-partitions-1506.03508", "distance": 2, "isCenter": false}, {"id": "98967ee696095ace8e21b3b75af4166f", "name": "\u03c6(ai,aj)", "description": "A rational function defined as the resultant of two sets associated with partitions.", "category": "formula", "paper": "2009_macdonald_polynomials", "distance": 2, "isCenter": false}, {"id": "af6e531430a355a1992af04bbceef548", "name": "polynomial identities", "description": "Identities involving polynomial expressions which are pivotal in combinatorics.", "category": "mathobject", "paper": "macmahon_cylindric_partitions", "distance": 2, "isCenter": false}, {"id": "86dd50090f3d517cb9c9085ad9c3a14e", "name": "macdonald polynomials", "description": "A family of symmetric functions that generalize the Schur functions, used in the context of (q,t)-deformations.", "category": "mathobject", "paper": "langer_cylindric_partitions_part1", "distance": 2, "isCenter": false}, {"id": "4566fc0923b55962afff2c69eae2afb0", "name": "conjecture 2.7", "description": "Find explicit combinatorial description of the cyclic descent extension for conjugacy classes whenever it exists. Open.", "category": "conjecture", "paper": "adin-elizalde-roichman-cyclic-descents-matchings-2210.14839", "distance": 0, "isCenter": true}, {"id": "0150eb3b649654f3896d6ede90373f60", "name": "a2 bailey tree", "description": "Structure that extends Bailey's lemma to prove identities related to A(1)2.", "category": "technique", "paper": "warnaar_A2_bailey_tree", "distance": 2, "isCenter": false}, {"id": "776b0537deaf5719ac11578936cc4ca6", "name": "eulerian quasisymmetric functions", "description": "A class of functions relating to Eulerian numbers and their combinatorial interpretations.", "category": "mathobject", "paper": "shareshian-wachs-eulerian-qsym-0812.0764", "distance": 2, "isCenter": false}, {"id": "b88122b2a2e35d8da7a272625caa693c", "name": "theorem 1.1", "description": "(q,t)-deformation of Borodin and Tingley's formula for the enumeration of cylindric plane partitions. Proved, Theorem 1.1.", "category": "theorem", "paper": "langer_cylindric_partitions_part1", "distance": 2, "isCenter": false}, {"id": "237f423dd13053edb3ae7be1410d06b1", "name": "\u03c9(p,\u03c9;m)", "description": "The order polynomial of (P,\u03c9) defined as \u2126(P,\u03c9;m) = Um(P,\u03c9)|q=1.", "category": "mathobject", "paper": "gessel-historical-survey-p-partitions-1506.03508", "distance": 2, "isCenter": false}, {"id": "d048fa80e71a5131bb300b325e84fc17", "name": "rogers-ramanujan identities", "description": "Classical q-series identities relating partition theory and combinatorial identities.", "category": "identity", "paper": "sills_derivation_RR_constant_terms", "distance": 2, "isCenter": false}, {"id": "caabda2cb4b65c908d7297489e95938a", "name": "type b version of theorem 1.2", "description": "A specific variant of Theorem 1.2 that applies to type B.", "category": "identity", "paper": "shareshian-wachs-eulerian-qsym-0812.0764", "distance": 2, "isCenter": false}, {"id": "39eb36d15cad51b5882dd6bab7aaa9fc", "name": "u(p,\u03c9)", "description": "The generating function counting all (P,\u03c9)-partitions.", "category": "formula", "paper": "gessel-historical-survey-p-partitions-1506.03508", "distance": 2, "isCenter": false}, {"id": "c29141ed6bc45e18864e4ae6f58936e5", "name": "theorem 1.3", "description": "Little G\u00f6llnitz and G\u00f6llnitz-Gordon identities expressed in terms of generating functions. Proved, Section 4.", "category": "theorem", "paper": "corteel_dousse_uncu_weighted_cylindric", "distance": 2, "isCenter": false}, {"id": "80fdb00f419a58e684b6d22cfce9220e", "name": "formulas (1.3)", "description": "Specific equations defining sequences \u03b2 and \u03b3 in terms of sums involving sequences \u03b1 and \u03b4.", "category": "formula", "paper": "warnaar_50_years_baileys_lemma_uq", "distance": 2, "isCenter": false}, {"id": "60cc590c8ce45ce8845ec0884552235d", "name": "burges summation", "description": "Summation identity related to generating functions of partitions.", "category": "identity", "paper": "gessel_krattenthaler_1997", "distance": 2, "isCenter": false}, {"id": "8ab2cf8304af5755947778c599d4a07d", "name": "hall-littlewood polynomials", "description": "Polynomials defined over partitions with specific multiplicities.", "category": "mathobject", "paper": "jouhet-zeng-hall-littlewood-0110165", "distance": 2, "isCenter": false}, {"id": "dc10728d828058328635cded387fae8e", "name": "theorem 2.1", "description": "Describes how to generate new Bailey pairs from existing ones using a specific transformation.", "category": "theorem", "paper": "warnaar_50_years_baileys_lemma", "distance": 1, "isCenter": false}, {"id": "eb1daf084c1053a2b5a40d2315da4364", "name": "kanade\u2013russell conjecture", "description": "Conjecture about the existence of certain identities for the characters of A(1)2. Open, stated as Conjecture 1.1.", "category": "conjecture", "paper": "warnaar_A2_bailey_tree", "distance": 2, "isCenter": false}, {"id": "247315ec58e15a5aa60549a5159acdf8", "name": "verlinde algebra", "description": "An algebra that encodes the fusion rules of conformal field theories and their representations.", "category": "mathobject", "paper": "korff_1110.6356", "distance": 2, "isCenter": false}, {"id": "40bc5756c5db57649422e8c28416e907", "name": "corollary 3.19", "description": "Provides count of non-hook shapes and their relation to Schur function expansion. Proved.", "category": "corollary", "paper": "adin-reiner-roichman-cyclic-descents-tableaux-1710.06664", "distance": 2, "isCenter": false}, {"id": "ee0dd3fb2f255546b6ed1c8c831ef294", "name": "bailey lemma", "description": "A method used for proving multiple sum identities.", "category": "technique", "paper": "jouhet-zeng-hall-littlewood-0110165", "distance": 2, "isCenter": false}, {"id": "6116bdd75189517a9d4e5f28966a94f5", "name": "bailey chain", "description": "A method for generating infinite sequences of Bailey pairs from a single Bailey pair.", "category": "technique", "paper": "warnaar_50_years_baileys_lemma", "distance": 2, "isCenter": false}, {"id": "594e889aaf6d5554929b4a4c768d0815", "name": "theorem 1.2", "description": "Provides an explicit combinatorial description of the weight function for cylindric plane partitions. Proved, Theorem 1.2.", "category": "identity", "paper": "langer_cylindric_partitions_part1", "distance": 1, "isCenter": false}, {"id": "cec8f95916855dde9a0c540f54539b28", "name": "andrews-gordon identities", "description": "Generalization of Rogers-Ramanujan identities related to integer partitions. Instances are provided in Theorem 1.1.", "category": "identity", "paper": "griffin-ono-warnaar-2016", "distance": 2, "isCenter": false}], "links": [{"source": "594e889aaf6d5554929b4a4c768d0815", "target": "eb1daf084c1053a2b5a40d2315da4364", "rel": "proves"}, {"source": "0150eb3b649654f3896d6ede90373f60", "target": "eb1daf084c1053a2b5a40d2315da4364", "rel": "extends"}, {"source": "ee0dd3fb2f255546b6ed1c8c831ef294", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "extends"}, {"source": "0150eb3b649654f3896d6ede90373f60", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "uses"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "b88122b2a2e35d8da7a272625caa693c", "rel": "extends"}, {"source": "c29141ed6bc45e18864e4ae6f58936e5", "target": "594e889aaf6d5554929b4a4c768d0815", "rel": "extends"}, {"source": "dc10728d828058328635cded387fae8e", "target": "a839562f804f5ed6b620f2baa36eb1a5", "rel": "computes"}, {"source": "dc10728d828058328635cded387fae8e", "target": "39eb36d15cad51b5882dd6bab7aaa9fc", "rel": "computes"}, {"source": "dc10728d828058328635cded387fae8e", "target": "237f423dd13053edb3ae7be1410d06b1", "rel": "computes"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "247315ec58e15a5aa60549a5159acdf8", "rel": "defines"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "247315ec58e15a5aa60549a5159acdf8", "rel": "generalizes"}, {"source": "c29141ed6bc45e18864e4ae6f58936e5", "target": "b88122b2a2e35d8da7a272625caa693c", "rel": "extends"}, {"source": "dc10728d828058328635cded387fae8e", "target": "1381def4f47a5763b4d6e2844bd46e07", "rel": "proves"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "generalizes"}, {"source": "cec8f95916855dde9a0c540f54539b28", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "generalizes"}, {"source": "ee0dd3fb2f255546b6ed1c8c831ef294", "target": "cec8f95916855dde9a0c540f54539b28", "rel": "uses"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "a39ebdf00d675702858417265e77fdf2", "rel": "proves"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "0150eb3b649654f3896d6ede90373f60", "rel": "uses"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "4566fc0923b55962afff2c69eae2afb0", "rel": "implies"}, {"source": "d048fa80e71a5131bb300b325e84fc17", "target": "ee0dd3fb2f255546b6ed1c8c831ef294", "rel": "uses"}, {"source": "dc10728d828058328635cded387fae8e", "target": "ee0dd3fb2f255546b6ed1c8c831ef294", "rel": "extends"}, {"source": "ee0dd3fb2f255546b6ed1c8c831ef294", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "implies"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "cec8f95916855dde9a0c540f54539b28", "rel": "extends"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "8ab2cf8304af5755947778c599d4a07d", "rel": "uses"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "8ab2cf8304af5755947778c599d4a07d", "rel": "uses"}, {"source": "c29141ed6bc45e18864e4ae6f58936e5", "target": "8ab2cf8304af5755947778c599d4a07d", "rel": "uses"}, {"source": "c29141ed6bc45e18864e4ae6f58936e5", "target": "8ab2cf8304af5755947778c599d4a07d", "rel": "constructs"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "bb84e0a129bb51968d7599029d53db91", "rel": "generalizes"}, {"source": "4572733693be51cb8e9a1f8f643ca448", "target": "594e889aaf6d5554929b4a4c768d0815", "rel": "extends"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "caabda2cb4b65c908d7297489e95938a", "rel": "specializes_to"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "776b0537deaf5719ac11578936cc4ca6", "rel": "extends"}, {"source": "40bc5756c5db57649422e8c28416e907", "target": "594e889aaf6d5554929b4a4c768d0815", "rel": "implies"}, {"source": "dc10728d828058328635cded387fae8e", "target": "4566fc0923b55962afff2c69eae2afb0", "rel": "proves"}, {"source": "dc10728d828058328635cded387fae8e", "target": "86dd50090f3d517cb9c9085ad9c3a14e", "rel": "proves"}, {"source": "dc10728d828058328635cded387fae8e", "target": "98967ee696095ace8e21b3b75af4166f", "rel": "uses"}, {"source": "4566fc0923b55962afff2c69eae2afb0", "target": "86dd50090f3d517cb9c9085ad9c3a14e", "rel": "about"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "60cc590c8ce45ce8845ec0884552235d", "rel": "computes"}, {"source": "c29141ed6bc45e18864e4ae6f58936e5", "target": "ee0dd3fb2f255546b6ed1c8c831ef294", "rel": "uses"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "cec8f95916855dde9a0c540f54539b28", "rel": "extends"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "8ab2cf8304af5755947778c599d4a07d", "rel": "involves"}, {"source": "594e889aaf6d5554929b4a4c768d0815", "target": "af6e531430a355a1992af04bbceef548", "rel": "generalizes"}, {"source": "dc10728d828058328635cded387fae8e", "target": "80fdb00f419a58e684b6d22cfce9220e", "rel": "uses"}, {"source": "dc10728d828058328635cded387fae8e", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "proves"}, {"source": "dc10728d828058328635cded387fae8e", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "specializes_to"}, {"source": "b88122b2a2e35d8da7a272625caa693c", "target": "ee0dd3fb2f255546b6ed1c8c831ef294", "rel": "proves"}, {"source": "ee0dd3fb2f255546b6ed1c8c831ef294", "target": "d048fa80e71a5131bb300b325e84fc17", "rel": "uses"}, {"source": "6116bdd75189517a9d4e5f28966a94f5", "target": "dc10728d828058328635cded387fae8e", "rel": "uses"}]};
+const TYPE_COLORS = {"theorem": "#E74C3C", "conjecture": "#F39C12", "identity": "#9B59B6", "mathobject": "#4A90D9", "technique": "#2ECC71", "formula": "#1ABC9C", "proposition": "#E74C3C", "corollary": "#E74C3C", "lemma": "#E74C3C"};
+const edgeCounts = {"uses": 12, "extends": 10, "proves": 7, "generalizes": 5, "computes": 4, "implies": 3, "specializes_to": 2, "defines": 1, "constructs": 1, "about": 1, "involves": 1};
+const hasCenter = true;
+
+// Build legend
+const catLegend = document.getElementById('cat-legend');
+Object.entries(TYPE_COLORS).forEach(([cat, color]) => {
+  const cnt = data.nodes.filter(n => n.category === cat).length;
+  if (cnt === 0) return;
+  catLegend.innerHTML += `<div class="legend-item"><span class="legend-dot" style="background:${color}"></span>${cat} <span class="count">${cnt}</span></div>`;
+});
+
+// Edge filters
+const activeEdges = new Set(Object.keys(edgeCounts));
+const edgeDiv = document.getElementById('edge-filters');
+Object.entries(edgeCounts).sort((a,b) => b[1]-a[1]).forEach(([rel, cnt]) => {
+  edgeDiv.innerHTML += `<div class="filter-group"><label><input type="checkbox" checked data-rel="${rel}"> ${rel} <span class="count">${cnt}</span></label></div>`;
+});
+edgeDiv.addEventListener('change', e => {
+  const r = e.target.dataset.rel; if (!r) return;
+  e.target.checked ? activeEdges.add(r) : activeEdges.delete(r);
+  applyFilters();
+});
+function toggleEdges(on) {
+  activeEdges.clear();
+  if (on) Object.keys(edgeCounts).forEach(r => activeEdges.add(r));
+  edgeDiv.querySelectorAll('input').forEach(cb => cb.checked = on);
+  applyFilters();
+}
+
+const adj = new Map();
+data.links.forEach(l => {
+  const s = typeof l.source === 'object' ? l.source.id : l.source;
+  const t = typeof l.target === 'object' ? l.target.id : l.target;
+  if (!adj.has(s)) adj.set(s, []);
+  if (!adj.has(t)) adj.set(t, []);
+  adj.get(s).push(l);
+  adj.get(t).push(l);
+});
+
+const degreeMap = {};
+data.links.forEach(l => {
+  const s = typeof l.source === 'object' ? l.source.id : l.source;
+  const t = typeof l.target === 'object' ? l.target.id : l.target;
+  degreeMap[s] = (degreeMap[s]||0)+1;
+  degreeMap[t] = (degreeMap[t]||0)+1;
+});
+
+const W = window.innerWidth, H = window.innerHeight;
+const svg = d3.select('svg');
+const defs = svg.append('defs');
+defs.append('marker').attr('id','arrow').attr('viewBox','0 0 10 6')
+  .attr('refX',20).attr('refY',3).attr('markerWidth',6).attr('markerHeight',4)
+  .attr('orient','auto')
+  .append('path').attr('d','M0,0 L10,3 L0,6').attr('fill','#333');
+const g = svg.append('g');
+svg.call(d3.zoom().scaleExtent([0.05, 12]).on('zoom', e => g.attr('transform', e.transform)));
+
+const centerNode = data.nodes.find(n => n.isCenter);
+if (centerNode) { centerNode.fx = W/2; centerNode.fy = H/2; }
+
+const forces = {
+  link: d3.forceLink(data.links).id(d => d.id).distance(80).strength(0.3),
+  charge: d3.forceManyBody().strength(-150),
+  center: d3.forceCenter(W/2, H/2),
+  collision: d3.forceCollide().radius(15),
+};
+if (hasCenter) forces.radial = d3.forceRadial(d => d.distance * 130, W/2, H/2).strength(0.25);
+
+const simulation = d3.forceSimulation(data.nodes);
+Object.entries(forces).forEach(([k,v]) => simulation.force(k, v));
+
+const linkSel = g.append('g').selectAll('line').data(data.links).join('line')
+  .attr('stroke', '#282828').attr('stroke-width', 1).attr('stroke-opacity', 0.5)
+  .attr('marker-end', 'url(#arrow)');
+
+const linkLabels = g.append('g').selectAll('text').data(data.links).join('text')
+  .attr('class', 'link-label')
+  .text(d => d.rel)
+  .attr('text-anchor', 'middle')
+  .attr('dy', -4);
+
+const nodeSel = g.append('g').selectAll('g').data(data.nodes).join('g')
+  .attr('class','node')
+  .call(d3.drag()
+    .on('start', (e,d)=>{ if(!e.active) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+    .on('drag', (e,d)=>{ d.fx=e.x; d.fy=e.y; })
+    .on('end', (e,d)=>{ if(!e.active) simulation.alphaTarget(0); if(!d.isCenter){d.fx=null; d.fy=null;} }));
+
+const nodeR = d => d.isCenter ? 18 : Math.max(4, Math.min(14, 3 + Math.sqrt(degreeMap[d.id]||1)*2));
+const nodeColor = d => d.isCenter ? '#ff3366' : (TYPE_COLORS[d.category] || '#555');
+
+nodeSel.append('circle')
+  .attr('r', nodeR)
+  .attr('fill', nodeColor)
+  .attr('stroke', d => d.isCenter ? '#fff' : '#111')
+  .attr('stroke-width', d => d.isCenter ? 2.5 : 0.5);
+
+nodeSel.append('text')
+  .attr('dx', d => nodeR(d) + 4).attr('dy', 3)
+  .text(d => d.name.length > 40 ? d.name.slice(0,40)+'...' : d.name)
+  .style('display', d => (degreeMap[d.id]||0) >= 3 || d.isCenter ? 'block' : 'none')
+  .style('font-weight', d => d.isCenter ? 'bold' : 'normal')
+  .style('fill', d => d.isCenter ? '#ff3366' : '#bbb');
+
+// Click-to-pin tooltip
+const tooltip = d3.select('#tooltip');
+let pinned = null;
+
+function highlightNode(d) {
+  const connIds = new Set([d.id]);
+  (adj.get(d.id)||[]).forEach(l => {
+    connIds.add(l.source.id||l.source); connIds.add(l.target.id||l.target);
+  });
+  nodeSel.select('circle').attr('opacity', n => connIds.has(n.id) ? 1 : 0.1);
+  nodeSel.select('text').attr('opacity', n => connIds.has(n.id) ? 1 : 0.1);
+  linkSel.attr('stroke-opacity', l => {
+    const s = l.source.id||l.source, t = l.target.id||l.target;
+    return s===d.id||t===d.id ? 0.9 : 0.03;
+  }).attr('stroke', l => {
+    const s = l.source.id||l.source, t = l.target.id||l.target;
+    return s===d.id||t===d.id ? '#666' : '#282828';
+  });
+}
+function resetAll() {
+  nodeSel.select('circle').attr('opacity', 1).attr('stroke', d => d.isCenter ? '#fff' : '#111').attr('stroke-width', d => d.isCenter ? 2.5 : 0.5);
+  nodeSel.select('text').attr('opacity', 1);
+  linkSel.attr('stroke-opacity', 0.5).attr('stroke', '#282828');
+}
+function dismiss() { pinned = null; tooltip.style('display','none'); resetAll(); }
+
+nodeSel.on('click', (e, d) => {
+  e.stopPropagation();
+  if (pinned === d.id) { dismiss(); return; }
+  pinned = d.id;
+  const edgeHtml = (adj.get(d.id)||[]).map(l => {
+    const s = l.source.id||l.source, t = l.target.id||l.target;
+    const other = s===d.id ? (l.target.name||t) : (l.source.name||s);
+    const dir = s===d.id ? '\u2192' : '\u2190';
+    const c = TYPE_COLORS[l.rel] || '#6510F4';
+    return `<div class="edge-item">${dir} <span class="edge-rel" style="color:${c}">${l.rel}</span> ${other}</div>`;
+  }).join('');
+  const catColor = TYPE_COLORS[d.category] || '#888';
+  tooltip.style('display','block')
+    .style('left', (e.pageX+15)+'px').style('top', (e.pageY-10)+'px')
+    .html(`<span class="close" onclick="document.getElementById('tooltip').style.display='none'">\u2715</span>
+     <div class="name">${d.name}</div>
+     <div class="cat" style="color:${catColor}">${d.category || 'uncategorized'}</div>
+     ${d.paper ? '<div class="paper">\ud83d\udcc4 '+d.paper+'</div>' : ''}
+     ${d.description ? '<div class="desc">'+d.description+'</div>' : ''}
+     ${edgeHtml ? '<div class="edges">'+edgeHtml+'</div>' : ''}`);
+  d3.select(e.currentTarget).select('circle').attr('stroke','#fff').attr('stroke-width',2.5);
+  highlightNode(d);
+});
+nodeSel.on('mouseover', (e, d) => { if (pinned) return; d3.select(e.currentTarget).select('circle').attr('stroke','#fff').attr('stroke-width',2); highlightNode(d); });
+nodeSel.on('mouseout', (e, d) => { if (pinned) return; d3.select(e.currentTarget).select('circle').attr('stroke', d.isCenter?'#fff':'#111').attr('stroke-width', d.isCenter?2.5:0.5); resetAll(); });
+svg.on('click', () => dismiss());
+
+simulation.on('tick', () => {
+  linkSel.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
+  linkLabels.attr('x',d=>(d.source.x+d.target.x)/2).attr('y',d=>(d.source.y+d.target.y)/2);
+  nodeSel.attr('transform', d=>`translate(${d.x},${d.y})`);
+});
+
+function applyFilters() {
+  linkSel.style('display', d => activeEdges.has(d.rel) ? null : 'none');
+  linkLabels.style('display', d => activeEdges.has(d.rel) ? null : 'none');
+  const conn = new Set();
+  data.links.forEach(l => { if (activeEdges.has(l.rel)) { conn.add(l.source.id||l.source); conn.add(l.target.id||l.target); } });
+  nodeSel.style('display', d => conn.has(d.id) ? null : 'none');
+  document.getElementById('stats').textContent = `${conn.size} nodes \xb7 ${data.links.filter(l=>activeEdges.has(l.rel)).length} edges`;
+}
+
+document.getElementById('search').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  if (!q) { resetAll(); nodeSel.select('text').style('display', d => (degreeMap[d.id]||0)>=3||d.isCenter?'block':'none'); return; }
+  nodeSel.select('circle').attr('opacity', d => d.name.toLowerCase().includes(q) ? 1 : 0.06);
+  nodeSel.select('text').style('display', d => d.name.toLowerCase().includes(q) ? 'block' : 'none')
+    .attr('fill', d => d.name.toLowerCase().includes(q) ? '#ff0' : '#bbb');
+  linkSel.attr('stroke-opacity', d => {
+    const s=(d.source.name||'').toLowerCase(), t=(d.target.name||'').toLowerCase();
+    return s.includes(q)||t.includes(q) ? 0.6 : 0.02;
+  });
+});
+
+document.getElementById('stats').textContent = `${data.nodes.length} nodes \xb7 ${data.links.length} edges`;
+</script>
+</body>
+</html>

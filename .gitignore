@@ -1,0 +1,16 @@
+# Cognee databases (large binary, regenerate with ingest_papers.py + run_cognify.py)
+.cognee_data/
+.cognee_system/
+
+# Books / copyrighted material
+*.djvu
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
