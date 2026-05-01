@@ -91,6 +91,7 @@
     border-bottom: 1px dotted var(--link);
   }
   .wlink:hover { color: #79c0ff; border-bottom-style: solid; }
+  h3 .wlink { font-size: 16px; }
 
   /* Graph edges table */
   .edges {
@@ -935,11 +936,17 @@ links.forEach(link => {
   });
 });
 
-// Support internal .wlink clicks
+// Support internal .wlink clicks (walk up the DOM to handle clicks on
+// child elements like KaTeX-rendered math inside a .wlink span)
 document.addEventListener('click', e => {
-  if (e.target.classList.contains('wlink')) {
-    e.preventDefault();
-    navigate(e.target.dataset.page);
+  let el = e.target;
+  while (el && el !== document.body) {
+    if (el.classList && el.classList.contains('wlink') && el.dataset.page) {
+      e.preventDefault();
+      navigate(el.dataset.page);
+      return;
+    }
+    el = el.parentElement;
   }
 });
 </script>
